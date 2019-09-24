@@ -1,0 +1,4 @@
+
+function myMessage() {
+	alert("Test");
+}
