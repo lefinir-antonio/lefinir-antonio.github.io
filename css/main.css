@@ -1,0 +1,8 @@
+* { margin: 0; box-sizing: border-box; } 
+
+body { 
+	font-size: 18px; 
+	line-height: 34px;
+	font-family: "Dyslexie", sans-serif;
+	color: #009090;
+}
