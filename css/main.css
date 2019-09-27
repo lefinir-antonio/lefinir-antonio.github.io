@@ -3,6 +3,41 @@
 body { 
 	font-size: 18px; 
 	line-height: 34px;
-	font-family: "Dyslexie", sans-serif;
+	font-family: 'PT Sans', Verdana, sans-serif;
 	color: #009090;
+}
+
+h1 {
+	font-size: 1.75rem;
+	color: #FFF;
+}
+
+h2 {
+	font-size: 1.3rem;
+	text-align: center;
+	border-bottom: 1px solid #bbb;
+}
+
+header, main, footer {
+	margin: 1.25rem auto;
+	padding: .5rem;
+	/*max-width: 100%;*/
+	max-width: 830px;
+}
+
+header, footer, footer a {
+	text-align: center;
+	background-color: #2dbcd1;
+	color: whitesmoke;
+}
+
+header img {
+	margin-top: 6.5rem;
+	width: 177px;
+	height: auto;
+	float: right;
+}
+
+footer {
+	font-size: 0.7rem;
 }
