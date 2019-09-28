@@ -4,18 +4,26 @@ body {
 	font-size: 18px; 
 	line-height: 34px;
 	font-family: 'PT Sans', Verdana, sans-serif;
-	color: #009090;
+	color: #231f20;
 }
 
 h1 {
 	font-size: 1.75rem;
-	color: #FFF;
+	color: #EAEAEA;
 }
 
 h2 {
 	font-size: 1.3rem;
 	text-align: center;
 	border-bottom: 1px solid #bbb;
+	color: #ad974f;
+}
+a {
+	color:#231f20;
+}
+
+a:visited {
+  color: #434a54;
 }
 
 header, main, footer {
@@ -25,9 +33,9 @@ header, main, footer {
 	max-width: 830px;
 }
 
-header, footer, footer a {
+header, footer {
 	text-align: center;
-	background-color: #2dbcd1;
+	background-color: #231f20;
 	color: whitesmoke;
 }
 
@@ -40,4 +48,5 @@ header img {
 
 footer {
 	font-size: 0.7rem;
+	background-color: #8E793E;
 }
