@@ -10,16 +10,16 @@ function addItem() {
 }
 
 function infoArray() {
-	max=myarr[0];
-	min=myarr[0];
+	max=parseInt(myarr[0]);
+	min=parseInt(myarr[0]);
 	for (var i = 0; i < myarr.length; i++) {
-		if (myarr[i] > max) max = myarr[i];
-		if (myarr[i] < min) min = myarr[i];
-		console.log(i, "max", max); 
-		console.log(i, "min", min); 
+		if (parseInt(myarr[i]) > max) max = parseInt(myarr[i]);
+		if (parseInt(myarr[i]) < min) min = parseInt(myarr[i]);
+		//console.log(i, "max", max); 
+		//console.log(i, "min", min); 
 	}
-	console.log("final", max); 
-	console.log("final", min); //to confirm it has been added to the array			
+	//console.log("final", max); 
+	//console.log("final", min); //to confirm it has been added to the array			
 }
 
 function myGraph() {
@@ -27,10 +27,10 @@ function myGraph() {
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 	ctx.beginPath();
-	ctx.moveTo(0, 150);
+	//ctx.moveTo(0, 150);
 	for (var i = 0; i < myarr.length; i++) {
 		varx=varx+50;
-		ctx.lineTo(varx, 300-myarr[i]);
+		ctx.lineTo(varx, 300-parseInt(myarr[i]));
 	}
 	ctx.stroke();
 
