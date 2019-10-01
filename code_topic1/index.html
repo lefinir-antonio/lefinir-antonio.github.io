@@ -23,21 +23,26 @@
 
   <main>
     <h2>Topic 1: Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h2>
-    <button onclick="myGraph()">Graph</button>
-    <button onclick="infoArray()">ArrayMaxMin</button>
     <div class="wrapper">
-      <h3>Arrays</h3>
-      <h4>Current Array: </h4>
+      <h3>Meeting Attendance Calculator</h3>
+      <h4>Historical Attendance (12 Months): </h4>
       <div id="items">[]</div>
-      <h4>Current Length: <span id="itemsLength">0</span></h4>
+      <h4>Month to Enter: <span id="itemsLength">1</span></h4>
       <input id="name" type="number" autocomplete="off">
       <button onclick="addItem()">Add</button>
+      <button onclick="myGraph()">Graph</button>
+      <button onclick="infoArray()">Analyze</button>      
     </div>
 
     <div class="wrapper">
       <canvas id="myCanvas" width="650" height="300" style="border:1px solid #d3d3d3;">
       </canvas>
-    </div>    
+    </div>
+
+    <div class="wrapper">
+      <h4 id="results">Results: </h4>
+    </div>
+
   </main>
 
 
