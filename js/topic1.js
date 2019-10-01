@@ -15,11 +15,11 @@ function infoArray() {
 	for (var i = 0; i < myarr.length; i++) {
 		if (myarr[i] > max) max = myarr[i];
 		if (myarr[i] < min) min = myarr[i];
-		console.log(max); //to confirm it has been added to the array
-		console.log(min); //to confirm it has been added to the array		
+		console.log(i, "max", max); 
+		console.log(i, "min", min); 
 	}
-	console.log(max); //to confirm it has been added to the array
-	console.log(min); //to confirm it has been added to the array			
+	console.log("final", max); 
+	console.log("final", min); //to confirm it has been added to the array			
 }
 
 function myGraph() {
