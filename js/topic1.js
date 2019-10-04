@@ -8,7 +8,7 @@ function addItem() {
 	//save value into the array
 	myarr.push(document.getElementById("name").value);
 	//prints result
-	document.getElementById('itemsLength').innerHTML = myarr.length + 1;
+	if (myarr.length != 12) document.getElementById('itemsLength').innerHTML = myarr.length + 1;
 	document.getElementById('items').innerHTML = "[" + myarr.join(" , ") + "]";
 	//set focus over textbox
 	document.getElementById("name").focus();
