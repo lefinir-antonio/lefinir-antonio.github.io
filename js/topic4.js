@@ -20,6 +20,6 @@ function viewCity() {
         console.log(myArr[0]);
         }
     };
-    xmlhttp.open("GET", "../code_topic4/uy.json", true);
+    xmlhttp.open("GET", "../code_topic4/uyruguay.json", true);
     xmlhttp.send();
 }
