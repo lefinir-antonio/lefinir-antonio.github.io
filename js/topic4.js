@@ -4,18 +4,17 @@ function viewCity() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         //document.getElementById("demo").innerHTML = myArr[0];
-        console.log(myArr[0]);
+        for (i=0; i < myArr.length; i++) {
+            myRow = '<td>' + myArr[i].name() + '</td>' + myArr[i].coord() + '<td></td><td></td><td></td>';
+            document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
+        }
         }
     };
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
     xmlhttp.send();
 //---------------crear la tabla
 
- 
-for (i=0; i < myArr.length; i++) {
-    myRow = '<td>' + myArr[i].name() + '</td>' + myArr[i].coord() + '<td></td><td></td><td></td>';
-    document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
-}
+
 
 }
 function viewWeather() {
