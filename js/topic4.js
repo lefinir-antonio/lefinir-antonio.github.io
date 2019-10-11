@@ -6,7 +6,7 @@ function viewCity() {
         //document.getElementById("demo").innerHTML = myArr[0];
         for (i=0; i < myArr.length; i++) {
             myW = viewWeather(myArr[i].id);
-            console.log (myW);
+            //console.log (myW);
             myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
             document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
         }
@@ -23,7 +23,7 @@ function viewWeather(coutryId) {
     req.onreadystatechange = function (aEvt) {
       if (req.readyState == 4) {
          if(req.status == 200)
-          //console.log(req.responseText);
+          console.log(req.responseText);
           return req.responseText;
          else
           console.log("Error loading page\n");

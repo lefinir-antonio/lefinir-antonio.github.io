@@ -68,7 +68,6 @@ div.centerTable{
 div.centerTable table , th, td{
    margin: 0 auto;
    text-align: left;
-   border:1px solid  #434a54;
    border-collapse: collapse;
 }
 
@@ -81,6 +80,7 @@ tr:nth-child(1) {
 tr:nth-child(odd) {
     background-color:#EAEAEA;
 }
+
 tr:nth-child(even) {
     background-color:#8E793E;
 }
