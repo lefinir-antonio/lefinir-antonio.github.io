@@ -14,7 +14,6 @@ function viewCity() {
     };
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
     xmlhttp.send();
-//---------------crear la tabla
 }
 function viewWeather(coutryId) {
     var req = new XMLHttpRequest();
