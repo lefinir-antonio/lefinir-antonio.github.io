@@ -5,7 +5,7 @@ function viewCity() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
-            viewWeather(myArr[i].id;
+            viewWeather(myArr[i].id);
             console.log (wCountry);
             myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
             document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
