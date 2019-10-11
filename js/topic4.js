@@ -18,6 +18,8 @@ function viewCity() {
 }
 function viewWeather(coutryId) {
     var req = new XMLHttpRequest();
+    var testigo = 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9'";
+    console.log(testigo);
     req.open('GET', 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9'", true);
     req.onreadystatechange = function (aEvt) {
       if (req.readyState == 4) {
