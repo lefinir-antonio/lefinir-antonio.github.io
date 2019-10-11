@@ -1,11 +1,11 @@
+var wCountry;
 function viewCity() { 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
-            var myW = viewWeather(myArr[i].id);
-            console.log (myW);
+            console.log (wCountry);
             myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
             document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
         }
@@ -16,6 +16,7 @@ function viewCity() {
 
 }
 
+/*
 function viewWeather(coutryId) {
     var req = new XMLHttpRequest();
     var testigo = 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9";
@@ -32,3 +33,15 @@ function viewWeather(coutryId) {
     };
     req.send(null);
   }
+*/
+  function viewWeather() { 
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+         wCountry = JSON.parse(this.responseText);
+        }
+    };
+    xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
+    xmlhttp.send();
+
+}
