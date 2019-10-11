@@ -72,7 +72,12 @@ div.centerTable table , th, td{
    border-collapse: collapse;
 }
 
-	
+
+tr:nth-child(1) {
+	background: #231f20;
+	color: #8E793E;
+  }
+
 tr:nth-child(odd) {
     background-color:#EAEAEA;
 }
