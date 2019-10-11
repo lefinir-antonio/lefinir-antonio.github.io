@@ -24,8 +24,8 @@ function viewWeather(coutryId) {
     req.onreadystatechange = function (aEvt) {
       if (req.readyState == 4) {
          if(req.status == 200)
-          //console.log(req.responseText);
-          return JSON.parse(req.responseText);
+          console.log(req.responseText);
+          //return JSON.parse(req.responseText);
          else
           console.log("Error loading page\n");
       }
