@@ -71,3 +71,11 @@ div.centerTable table , th, td{
    border:1px solid  #434a54;
    border-collapse: collapse;
 }
+
+	
+tr:nth-child(odd) {
+    background-color:#f2f2f2;
+}
+tr:nth-child(even) {
+    background-color:#fbfbfb;
+}
