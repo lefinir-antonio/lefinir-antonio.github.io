@@ -74,7 +74,7 @@ div.centerTable table , th, td{
 
 
 tr:nth-child(1) {
-	background: #231f20;
+	background-color: #231f20;
 	color: #8E793E;
   }
 
