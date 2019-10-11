@@ -35,12 +35,13 @@ function viewWeather(coutryId) {
     req.send(null);
   }
 */
+//this function shoulbe create the table IMPORTANT
   function viewWeather(coutryId) { 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
          wCountry = JSON.parse(this.responseText);
+         console.log(wCountry);
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
