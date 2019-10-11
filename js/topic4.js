@@ -5,7 +5,7 @@ function viewCity() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
-            console.log (wCountry);
+            //console.log (wCountry);
             myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
             document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
         }
@@ -38,6 +38,7 @@ function viewWeather(coutryId) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+        console.log(JSON.parse(this.responseText));
          wCountry = JSON.parse(this.responseText);
         }
     };
