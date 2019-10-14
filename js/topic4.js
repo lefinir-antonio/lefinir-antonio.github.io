@@ -41,7 +41,7 @@ function viewWeather(coutryId) {
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
          wCountry = JSON.parse(this.responseText);
-         myRow = '<td>' + wCountry.name + '</td><td>Lon: '+ wCountry.coord.lon.toFixed(2) + " -- Lat: " + wCountry.coord.lat.toFixed(2) + '</td><td></td><td></td>';
+         myRow = '<td>' + wCountry.name + '</td><td>Lon: '+ wCountry.coord.lon.toFixed(2) + " -- Lat: " + wCountry.coord.lat.toFixed(2) + '</td><td>' + wCountry.main.temp + '</td><td>'+ wCountry.weather[0].description + '</td>';
          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
          console.log(wCountry);
         }
