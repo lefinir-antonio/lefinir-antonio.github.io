@@ -6,9 +6,9 @@ function viewCity() {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
             viewWeather(myArr[i].id);
-            console.log (wCountry);
-            myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
-            document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
+            //console.log (wCountry);
+           // myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
+           // document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
         }
         }
     };
@@ -41,7 +41,9 @@ function viewWeather(coutryId) {
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
          wCountry = JSON.parse(this.responseText);
-         console.log(wCountry);
+         myRow = '<td>' + wCountry[i].name + '</td><td>Lon: '+ wCountry[i].coord.lon.toFixed(2) + " -- Lat: " + wCountry[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
+         document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
+         //console.log(wCountry);
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
