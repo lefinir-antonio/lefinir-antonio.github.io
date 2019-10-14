@@ -43,7 +43,7 @@ function viewWeather(coutryId) {
          wCountry = JSON.parse(this.responseText);
          myRow = '<td>' + wCountry.name + '</td><td>Lon: '+ wCountry.coord.lon.toFixed(2) + " -- Lat: " + wCountry.coord.lat.toFixed(2) + '</td><td></td><td></td>';
          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
-         //console.log(wCountry);
+         console.log(wCountry);
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
