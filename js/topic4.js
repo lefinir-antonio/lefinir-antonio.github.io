@@ -1,4 +1,5 @@
 var wCountry;
+var cuenta_loops =0;
 function viewCity() { 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -6,11 +7,9 @@ function viewCity() {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
             viewWeather(myArr[i].id);
-            //console.log (wCountry);
-           // myRow = '<td>' + myArr[i].name + '</td><td>Lon: '+ myArr[i].coord.lon.toFixed(2) + " -- Lat: " + myArr[i].coord.lat.toFixed(2) + '</td><td></td><td></td>';
-           // document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
         }
-        }
+        cuenta_loops= cuenta_loops +1;
+      }
     };
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
     xmlhttp.send();
@@ -41,9 +40,10 @@ function viewWeather(coutryId) {
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
          wCountry = JSON.parse(this.responseText);
-         myRow = '<td>' + wCountry.name + '</td><td>Lon: '+ wCountry.coord.lon.toFixed(2) + " -- Lat: " + wCountry.coord.lat.toFixed(2) + '</td><td>' + wCountry.main.temp.toFixed(2) + '</td><td>'+ wCountry.weather[0].description + '</td>';
+         myRow = '<td>' + wCountry.name + '</td><td>' + wCountry.main.temp.toFixed(2) + '</td><td>'+ wCountry.weather[0].description + '</td>';
          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
          console.log(wCountry);
+         console.log(cuenta_loops);
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
