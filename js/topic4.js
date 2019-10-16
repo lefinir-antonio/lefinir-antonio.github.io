@@ -1,6 +1,7 @@
 var wCountry;
-var cuenta_loops =0;
-function viewCity() { 
+var count_loops = 0;
+function viewCity() {
+  if(count_loops !=1){ 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -8,12 +9,12 @@ function viewCity() {
         for (i=0; i < myArr.length; i++) {
             viewWeather(myArr[i].id);
         }
-        cuenta_loops= cuenta_loops +1;
+        count_loops= count_loops +1;
       }
     };
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
     xmlhttp.send();
-
+  }
 }
 
 /*
@@ -37,13 +38,15 @@ function viewWeather(coutryId) {
 //this function shoulbe create the table IMPORTANT
   function viewWeather(coutryId) { 
     var xmlhttp = new XMLHttpRequest();
+    var myF = 0;
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
          wCountry = JSON.parse(this.responseText);
-         myRow = '<td>' + wCountry.name + '</td><td>' + wCountry.main.temp.toFixed(2) + '</td><td>'+ wCountry.weather[0].description + '</td>';
+         myF = ((wCountry.main.temp.toFixed(2)-273.15) * 9/5) + 32;
+         myRow = '<td>' + wCountry.name + '</td><td>' + myF.toFixed(2) + ' F</td><td>'+ wCountry.weather[0].description + '</td>';
          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
          console.log(wCountry);
-         console.log(cuenta_loops);
+         console.log(count_loops);
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
