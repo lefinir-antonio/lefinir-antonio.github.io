@@ -70,6 +70,7 @@ function viewReg(){
     text = localStorage.getItem("testJSON");
     if (!!text) {
     db = JSON.parse(text);
+    document.getElementById("registers-dropdown").options.length = 0;
     document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
     //console.log(db.table[1].date);
     //console.log(db.table[1].registers[0].city);
@@ -98,6 +99,7 @@ function saveReg(){
 //clear storage
 function clearReg(){
   document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
+  document.getElementById("registers-dropdown").options.length = 0;
   document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
   db = {table:[]};
   localStorage.clear();
@@ -105,7 +107,6 @@ function clearReg(){
 
 //draw the new table with the old register selected
 function check(){
-    //alert("hola mundo");
     var elem = document.getElementById('registers-dropdown');
     document.getElementById('myTable').innerHTML ='<tr><td>Date</td><td>City</td><td>Temperature</td><td>Status</td></tr>';
     for (x=0; x < db.table[elem.selectedIndex-1].registers.length; x++) {
