@@ -81,7 +81,9 @@ function viewReg(){
         ele.innerHTML = ele.innerHTML +
             '<option value="' + i + '">Register at: ' + db.table[i].date + '</option>';
     }
+    count_loops = 0;
  }
+
 }
 
 
@@ -94,6 +96,7 @@ function saveReg(){
     myJSON = JSON.stringify(db);
     localStorage.setItem("testJSON", myJSON);
     aTable=[];
+    count_loops = 0;
   }
 }
 
@@ -104,6 +107,7 @@ function clearReg(){
   document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
   db = {table:[]};
   localStorage.clear();
+  count_loops = 0;
 }
 
 //draw the new table with the old register selected
@@ -115,5 +119,6 @@ function check(){
               myRow = '<td>' + db.table[elem.selectedIndex-1].date + '</td><td>' + db.table[elem.selectedIndex-1].registers[x].city + '</td><td>' + db.table[elem.selectedIndex-1].registers[x].temperature + '</td><td>'+ db.table[elem.selectedIndex-1].registers[x].status + '</td>';
               document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
           }
+          count_loops = 0;
       }        
 }
