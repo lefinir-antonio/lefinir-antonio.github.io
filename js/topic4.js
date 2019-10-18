@@ -67,17 +67,19 @@ function viewWeather(coutryId) {
 
 //populate the dropdown with old registers
 function viewReg(){
-  text = localStorage.getItem("testJSON");
-  db = JSON.parse(text);
-  //console.log(db.table[1].date);
-  //console.log(db.table[1].registers[0].city);
-//populate the combo box
-  var ele = document.getElementById('registers-dropdown');
-  for (var i = 0; i < db.table.length; i++) {
-      // POPULATE SELECT ELEMENT WITH JSON.
-      ele.innerHTML = ele.innerHTML +
-          '<option value="' + i + '">Register at: ' + db.table[i].date + '</option>';
-  }
+  if (sessionStorage.length != 0) {
+    text = localStorage.getItem("testJSON");
+    db = JSON.parse(text);
+    //console.log(db.table[1].date);
+    //console.log(db.table[1].registers[0].city);
+  //populate the combo box
+    var ele = document.getElementById('registers-dropdown');
+    for (var i = 0; i < db.table.length; i++) {
+        // POPULATE SELECT ELEMENT WITH JSON.
+        ele.innerHTML = ele.innerHTML +
+            '<option value="' + i + '">Register at: ' + db.table[i].date + '</option>';
+    }
+ }
 }
 
 
@@ -101,10 +103,12 @@ function clearReg(){
 
 //draw the new table with the old register selected
 function check(){
-  var elem = document.getElementById('registers-dropdown');
-  document.getElementById('myTable').innerHTML ='<tr><td>Date</td><td>City</td><td>Temperature</td><td>Status</td></tr>';
-   for (x=0; x < db.table[elem.selectedIndex].registers.length; x++) {
-          myRow = '<td>' + db.table[elem.selectedIndex].date + '</td><td>' + db.table[elem.selectedIndex].registers[x].city + '</td><td>' + db.table[elem.selectedIndex].registers[x].temperature + '</td><td>'+ db.table[elem.selectedIndex].registers[x].status + '</td>';
-          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
-      }
+  if (sessionStorage.length != 0) {
+    var elem = document.getElementById('registers-dropdown');
+    document.getElementById('myTable').innerHTML ='<tr><td>Date</td><td>City</td><td>Temperature</td><td>Status</td></tr>';
+    for (x=0; x < db.table[elem.selectedIndex].registers.length; x++) {
+            myRow = '<td>' + db.table[elem.selectedIndex].date + '</td><td>' + db.table[elem.selectedIndex].registers[x].city + '</td><td>' + db.table[elem.selectedIndex].registers[x].temperature + '</td><td>'+ db.table[elem.selectedIndex].registers[x].status + '</td>';
+            document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
+        }
+   }    
 }
