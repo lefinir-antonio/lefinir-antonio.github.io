@@ -10,6 +10,7 @@ db = {table:[]};
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
   if(count_loops !=1){ 
+    document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -68,8 +69,8 @@ function addReg(){
 function viewReg(){
   text = localStorage.getItem("testJSON");
   db = JSON.parse(text);
-  console.log(db.table[1].date);
-  console.log(db.table[1].registers[0].city);
+  //console.log(db.table[1].date);
+  //console.log(db.table[1].registers[0].city);
 //populate the combo box
   var ele = document.getElementById('registers-dropdown');
   for (var i = 0; i < db.table.length; i++) {
