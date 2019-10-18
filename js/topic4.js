@@ -40,3 +40,10 @@ function viewWeather(coutryId) {
 
 }
 
+//save registers to storage
+function saveReg(){
+  myJSON = JSON.stringify(db);
+  localStorage.setItem("testJSON", myJSON);
+ 
+}
+
