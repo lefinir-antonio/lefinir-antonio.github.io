@@ -68,7 +68,7 @@ function viewWeather(coutryId) {
 //populate the dropdown with old registers
 function viewReg(){
     text = localStorage.getItem("testJSON");
-    if (text === null) {
+    if (!!text) {
     db = JSON.parse(text);
     //console.log(db.table[1].date);
     //console.log(db.table[1].registers[0].city);
