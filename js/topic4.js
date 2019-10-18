@@ -93,6 +93,7 @@ function saveReg(){
 
 //clear storage
 function clearReg(){
+  document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   document.getElementById("registers-dropdown").options.length = 0;
   db = {table:[]};
   localStorage.clear();
