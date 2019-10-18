@@ -70,6 +70,7 @@ function viewReg(){
     text = localStorage.getItem("testJSON");
     if (!!text) {
     db = JSON.parse(text);
+    document.getElementById("registers-dropdown").options.length = 0;
     //console.log(db.table[1].date);
     //console.log(db.table[1].registers[0].city);
   //populate the combo box
