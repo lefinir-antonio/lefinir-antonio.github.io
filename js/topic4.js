@@ -2,6 +2,9 @@ var wCountry;
 var saveTable;
 var count_loops = 0;
 var db, myObj, myJSON, text, obj, line;
+var oneReg = {date:"", registers: []};
+var aLine;
+var aTable=[];
 db = {table:[]};
 
 //this function use a json file to provide all cities of uruguay
@@ -32,8 +35,11 @@ function viewWeather(coutryId) {
          myF = ((wCountry.main.temp.toFixed(2)-273.15) * 9/5) + 32; //convert temperature kelvin to farenheit
          myRow = '<td>' + wCountry.name + '</td><td>' + myF.toFixed(2) + ' F</td><td>'+ wCountry.weather[0].description + '</td>';
          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
-         console.log(wCountry);
-         console.log(count_loops);
+         //se crea una linea de la tabla y se agrega a un array
+         aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
+         aTable.push(aLine);
+         console.log(aLine);
+         console.log(aTable;
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
@@ -43,10 +49,19 @@ function viewWeather(coutryId) {
 
 //add table to db
 function addReg(){
-  var d = new Date();
-  myObj = {date:d.toString(),registers:[{city:"Montevideo",temperature:"58 F",status:"cloudy"},{city:"Delta del Tigre",temperature:"60 F",status:"light rain"},{city:"Tacuarembo", temperature:"77 F", status:"sunny"},]}
-  db.table.push(myObj);
-  console.log(db);
+  //var d = new Date();
+  //myObj = {date:d.toString(),registers:[{city:"Montevideo",temperature:"58 F",status:"cloudy"},{city:"Delta del Tigre",temperature:"60 F",status:"light rain"},{city:"Tacuarembo", temperature:"77 F", status:"sunny"},]}
+  //db.table.push(myObj);
+  //console.log(db);
+
+
+    //guardar el objeto
+    var d = new Date();  
+    oneReg = {date:d.toString(), registers: aTable};
+    db.table.push(oneReg);
+
+    //***************************************
+
 }
 
 //populate the dropdown with old registers
