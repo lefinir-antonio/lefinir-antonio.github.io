@@ -85,12 +85,13 @@ function viewReg(){
 
 //save registers to storage
 function saveReg(){
-  var d = new Date();  
-  oneReg = {date:d.toString(), registers: aTable};
-  db.table.push(oneReg);
-  myJSON = JSON.stringify(db);
-  localStorage.setItem("testJSON", myJSON);
- 
+  if (aTable.length != 0) {
+    var d = new Date();  
+    oneReg = {date:d.toString(), registers: aTable};
+    db.table.push(oneReg);
+    myJSON = JSON.stringify(db);
+    localStorage.setItem("testJSON", myJSON);
+  }
 }
 
 //clear storage
