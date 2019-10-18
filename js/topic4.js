@@ -9,8 +9,8 @@ db = {table:[]};
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
+  document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   if(count_loops !=1){ 
-    document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -39,7 +39,7 @@ function viewWeather(coutryId) {
          //se crea una linea de la tabla y se agrega a un array
          aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
          aTable.push(aLine);
-         console.log(aLine);
+         //console.log(aLine);
          //console.log(aTable);
         }
     };
@@ -49,7 +49,7 @@ function viewWeather(coutryId) {
 }
 
 //add table to db
-function addReg(){
+//function addReg(){
   //var d = new Date();
   //myObj = {date:d.toString(),registers:[{city:"Montevideo",temperature:"58 F",status:"cloudy"},{city:"Delta del Tigre",temperature:"60 F",status:"light rain"},{city:"Tacuarembo", temperature:"77 F", status:"sunny"},]}
   //db.table.push(myObj);
@@ -57,13 +57,13 @@ function addReg(){
 
 
     //guardar el objeto
-    var d = new Date();  
-    oneReg = {date:d.toString(), registers: aTable};
-    db.table.push(oneReg);
+   // var d = new Date();  
+    //oneReg = {date:d.toString(), registers: aTable};
+    //db.table.push(oneReg);
 
     //***************************************
 
-}
+//}
 
 //populate the dropdown with old registers
 function viewReg(){
@@ -83,6 +83,9 @@ function viewReg(){
 
 //save registers to storage
 function saveReg(){
+  var d = new Date();  
+  oneReg = {date:d.toString(), registers: aTable};
+  db.table.push(oneReg);
   myJSON = JSON.stringify(db);
   localStorage.setItem("testJSON", myJSON);
  
