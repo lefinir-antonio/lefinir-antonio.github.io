@@ -93,6 +93,7 @@ function saveReg(){
     db.table.push(oneReg);
     myJSON = JSON.stringify(db);
     localStorage.setItem("testJSON", myJSON);
+    aTable=[];
   }
 }
 
