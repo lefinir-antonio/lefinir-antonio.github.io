@@ -1,4 +1,5 @@
 var myarr = [];
+var average = 0;
  
 function addItem() {
 	//some checks 
@@ -27,20 +28,36 @@ function infoArray() {
 		s=s+parseInt(myarr[i]);
 	}
 	//calculate the average
-	var average=s/i;
+	average=s/i;
 	//check that the array is not empty
 	if(s!=0) document.getElementById('results').innerHTML = "Results: " + "Max: " + max + " || " + "Min: " + min + " || " + "Average: " + average.toFixed(2);
-		
+	myGraph();
 }
 
 function myGraph() {
 	varx=0;
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
+	ctx.clearRect(0, 0, 650, 300);
+	ctx.strokeStyle = '#000000';
+	ctx.fillStyle = '#000000';
+	ctx.font = "15px Arial";
 	ctx.beginPath();
 	for (var i = 0; i < myarr.length; i++) {
 		varx=varx+50;
 		ctx.lineTo(varx, 300-parseInt(myarr[i]));
+		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));
 	}
 	ctx.stroke();
+	//draw the average in red color
+	if(average != 0){
+		ctx.beginPath();
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = '#ff0000';
+		ctx.moveTo(0,300-Math.round(average));
+		ctx.lineTo(650,300-Math.round(average));
+		ctx.fillStyle = '#ff0000';
+		ctx.fillText("AVG:" + Math.round(average),325,300-Math.round(average)-5);
+		ctx.stroke();
+	}
 }
