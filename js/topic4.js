@@ -91,7 +91,7 @@ function viewReg(){
 function saveReg(){
   if (aTable.length != 0) {
     var d = new Date();  
-    oneReg = {date:d.toString(), registers: aTable};
+    oneReg = {date:d.toString().slice(0, 24), registers: aTable};
     db.table.push(oneReg);
     myJSON = JSON.stringify(db);
     localStorage.setItem("testJSON", myJSON);
