@@ -89,10 +89,10 @@ tr:nth-child(even) {
 	background-color: #8E793E;
 	border: none;
 	color: #231f20;
-	padding: 16px 32px;
+	padding: 14px 30px;
 	text-align: center;
-	font-size: 16px;
-	margin: 4px 2px;
+	font-size: 14px;
+	margin: 2px 1px;
 	opacity: 1;
 	transition: 0.3s;
   }
