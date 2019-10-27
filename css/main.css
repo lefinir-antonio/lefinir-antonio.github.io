@@ -100,11 +100,11 @@ tr:nth-child(even) {
   .btn:hover {opacity: 0.6}
   
   .loader {
-	border: 5px solid #ad974f;
+	border: 16px solid #ad974f;
 	border-radius: 50%;
-	border-top:5px solid #231f20;
-	width: 12px;
-	height: 12px;
+	border-top:16px solid #231f20;
+	width: 120px;
+	height: 120px;
 	-webkit-animation: spin 2s linear infinite; /* Safari */
 	animation: spin 2s linear infinite;
   }

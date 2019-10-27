@@ -9,6 +9,7 @@ db = {table:[]};
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
+  document.getElementById("myLoader").disabled = false;
   document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   if(count_loops !=1){ 
     var xmlhttp = new XMLHttpRequest();
