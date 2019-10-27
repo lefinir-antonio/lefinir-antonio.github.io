@@ -100,6 +100,7 @@ tr:nth-child(even) {
   .btn:hover {opacity: 0.6}
   
   .loader {
+	visibility: hidden;
 	border: 16px solid #ad974f;
 	border-radius: 50%;
 	border-top:16px solid #231f20;
