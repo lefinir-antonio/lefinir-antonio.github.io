@@ -20,7 +20,6 @@ function viewCity() {
             viewWeather(myArr[i].id);
         }
         count_loops= count_loops +1;
-        document.getElementById("myLoader").style.visibility = 'hidden';
       }
     };
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
@@ -42,9 +41,9 @@ function viewWeather(coutryId) {
          //se crea una linea de la tabla y se agrega a un array
          aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
          aTable.push(aLine);
+         if (coutryId == 3480825) document.getElementById("myLoader").style.visibility = 'hidden';
          //console.log(aLine);
          //console.log(aTable);
-         if (coutryId = 3480825) document.getElementById("myLoader").style.visibility = 'hidden';;
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
