@@ -98,3 +98,24 @@ tr:nth-child(even) {
   }
   
   .btn:hover {opacity: 0.6}
+  
+  .loader {
+	border: 5px solid #ad974f;
+	border-radius: 50%;
+	border-top:5px solid #231f20;
+	width: 12px;
+	height: 12px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
