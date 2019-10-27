@@ -25,6 +25,7 @@ function viewCity() {
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
     xmlhttp.send();
   }
+  document.getElementById("myLoader").style.visibility = 'hidden';
 }
 
 //with this function  I obtain all temperatures and status of every city
