@@ -20,12 +20,13 @@ function viewCity() {
             viewWeather(myArr[i].id);
         }
         count_loops= count_loops +1;
+        document.getElementById("myLoader").style.visibility = 'hidden';
       }
     };
     xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
     xmlhttp.send();
   }
-  document.getElementById("myLoader").style.visibility = 'hidden';
+
 }
 
 //with this function  I obtain all temperatures and status of every city
