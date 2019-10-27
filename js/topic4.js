@@ -44,6 +44,7 @@ function viewWeather(coutryId) {
          aTable.push(aLine);
          //console.log(aLine);
          //console.log(aTable);
+         if (coutryId = 3480825) document.getElementById("myLoader").style.visibility = 'hidden';;
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
