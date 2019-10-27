@@ -105,8 +105,8 @@ tr:nth-child(even) {
 	border: 16px solid #ad974f;
 	border-radius: 50%;
 	border-top:16px solid #231f20;
-	width: 120px;
-	height: 120px;
+	width: 60px;
+	height: 60px;
 	-webkit-animation: spin 2s linear infinite; /* Safari */
 	animation: spin 2s linear infinite;
   }
