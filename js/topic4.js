@@ -10,6 +10,7 @@ db = {table:[]};
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
   document.getElementById("myLoader").style.visibility = 'visible';
+  document.getElementById('myTable').innerHTML = 'Please wait...';
   document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   if(count_loops !=1){ 
     var xmlhttp = new XMLHttpRequest();
@@ -41,7 +42,10 @@ function viewWeather(coutryId) {
          //se crea una linea de la tabla y se agrega a un array
          aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
          aTable.push(aLine);
-         if (coutryId == 3480825) document.getElementById("myLoader").style.visibility = 'hidden';
+         if (coutryId == 3480825) {
+           document.getElementById("myLoader").style.visibility = 'hidden';
+           document.getElementById('myTable').innerHTML = 'Uruguay Weather';
+         }
          //console.log(aLine);
          //console.log(aTable);
         }
