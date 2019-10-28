@@ -10,7 +10,7 @@ db = {table:[]};
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
   document.getElementById("myLoader").style.visibility = 'visible';
-  document.getElementById('myTable').innerHTML = 'Please wait...';
+  document.getElementById('myTitle').innerHTML = 'Please wait...';
   document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   if(count_loops !=1){ 
     var xmlhttp = new XMLHttpRequest();
@@ -44,7 +44,7 @@ function viewWeather(coutryId) {
          aTable.push(aLine);
          if (coutryId == 3480825) {
            document.getElementById("myLoader").style.visibility = 'hidden';
-           document.getElementById('myTable').innerHTML = 'Uruguay Weather';
+           document.getElementById('myTitle').innerHTML = 'Uruguay Weather';
          }
          //console.log(aLine);
          //console.log(aTable);
