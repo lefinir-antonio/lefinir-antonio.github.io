@@ -46,8 +46,8 @@ function viewWeather(coutryId) {
            document.getElementById("myLoader").style.visibility = 'hidden';
            document.getElementById('myTitle').innerHTML = 'Uruguay Weather';
          }
-         //console.log(aLine);
-         //console.log(aTable);
+         console.log(aLine);
+         console.log(aTable);
         }
     };
     xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
@@ -79,8 +79,8 @@ function viewReg(){
     db = JSON.parse(text);
     document.getElementById("registers-dropdown").options.length = 1;
     document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
-    //console.log(db.table[1].date);
-    //console.log(db.table[1].registers[0].city);
+    console.log(db.table[1].date);
+    console.log(db.table[1].registers[0].city);
   //populate the combo box
     var ele = document.getElementById('registers-dropdown');
     for (var i = 0; i < db.table.length; i++) {
