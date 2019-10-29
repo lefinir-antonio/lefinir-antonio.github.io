@@ -79,8 +79,8 @@ function viewReg(){
     db = JSON.parse(text);
     document.getElementById("registers-dropdown").options.length = 1;
     document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
-    console.log(db.table[1].date);
-    console.log(db.table[1].registers[0].city);
+    //console.log(db.table[1].date);
+    //console.log(db.table[1].registers[0].city);
   //populate the combo box
     var ele = document.getElementById('registers-dropdown');
     for (var i = 0; i < db.table.length; i++) {
