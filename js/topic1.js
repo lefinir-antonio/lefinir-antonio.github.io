@@ -1,5 +1,17 @@
 var myarr = [];
 var average = 0;
+var actSound = false;
+var xSound = document.getElementById('myAudio');        
+function gSound() {
+	if(actSound){
+		actSound = true;
+		document.getElementById('soundBtn').innerHTML = "No Sound";
+	}else{
+		actSound = false;
+		document.getElementById('soundBtn').innerHTML = "Sound";
+	}
+
+}
  
 function addItem() {
 	//some checks 
@@ -47,8 +59,9 @@ function myGraph() {
 		varx=varx+50;
 		ctx.lineTo(varx, 300-parseInt(myarr[i]));
 		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));
+		ctx.stroke();
 	}
-	ctx.stroke();
+
 	//draw the average in red color
 	if(average != 0){
 		ctx.beginPath();

@@ -30,7 +30,8 @@
       <h4>Month to Enter: <span id="itemsLength">1</span></h4>
       <input id="name" type="number" autocomplete="off">
       <button class="btn" onclick="addItem()">Add</button>
-      <button class="btn" onclick="infoArray()">Analyze and Graph</button>      
+      <button class="btn" onclick="infoArray(false)">Analyze and Graph</button>
+      <button id="soundBtn" class="btn" onclick="gSound()">Sound</button>
     </div>
 
     <div class="wrapper">
@@ -41,6 +42,11 @@
     <div class="wrapper">
       <h4 id="results">Results: </h4>
     </div>
+
+    <audio id="myAudio">
+      <source src="../audio/pencil.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
   </main>
 
