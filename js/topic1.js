@@ -5,7 +5,6 @@ var xSound = document.getElementById('myAudio');
 function gSound() {
 	if(actSound){
 		actSound = false;
-		xSound.play();
 		document.getElementById('soundBtn').innerHTML = "No Sound";
 	}else{
 		actSound = true;
@@ -60,6 +59,7 @@ function myGraph() {
 		varx=varx+50;
 		ctx.lineTo(varx, 300-parseInt(myarr[i]));
 		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));
+		xSound.play();
 		ctx.stroke();
 	}
 
