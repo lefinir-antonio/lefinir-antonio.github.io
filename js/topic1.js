@@ -4,10 +4,11 @@ var actSound = false;
 var xSound = document.getElementById('myAudio');        
 function gSound() {
 	if(actSound){
-		actSound = true;
+		actSound = false;
+		xSound.play();
 		document.getElementById('soundBtn').innerHTML = "No Sound";
 	}else{
-		actSound = false;
+		actSound = true;
 		document.getElementById('soundBtn').innerHTML = "Sound";
 	}
 
