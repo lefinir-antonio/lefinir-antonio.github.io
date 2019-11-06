@@ -59,11 +59,11 @@ function myGraph() {
 		varx=varx+50;
 		ctx.lineTo(varx, 300-parseInt(myarr[i]));
 		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));
+		ctx.stroke();
 		if(actSound){
 			sleep(1000);
 			xSound.play();
 		}
-		ctx.stroke();
 	}
 
 	//draw the average in red color
