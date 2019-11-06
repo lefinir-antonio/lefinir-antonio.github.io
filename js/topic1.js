@@ -61,8 +61,7 @@ function myGraph() {
 		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));
 		ctx.stroke();
 		if(actSound){
-			sleep(1000);
-			xSound.play();
+			setTimeout(xSound.play(), 1000);
 		}
 	}
 
