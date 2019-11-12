@@ -1,20 +1,11 @@
 var myarr = [];
 var average = 0;
-var actSound = false;
-var xSound = document.getElementById('myAudio');        
-function gSound() {
-	if(actSound){
-		actSound = false;
-		document.getElementById('soundBtn').innerHTML = "No Sound";
-	}else{
-		actSound = true;
-		document.getElementById('soundBtn').innerHTML = "Sound";
-	}
-
-}
+var xSoundCalc = document.getElementById('myAudioCalc');        
+var xSoundClick = document.getElementById('myAudioClick');        
  
 function addItem() {
-	//some checks 
+	//some checks
+	xSoundClick.play()
 	if (myarr.length >= 12) return;
 	if (!document.getElementById("name").value) return;
 	if (parseInt(document.getElementById("name").value) < 0 || parseInt(document.getElementById("name").value) > 300) return;
@@ -29,6 +20,7 @@ function addItem() {
 
 function infoArray() {
 	//I assume that the first item is the max and the min
+	xSoundCalc.play()
 	max=parseInt(myarr[0]);
 	min=parseInt(myarr[0]);
 	//I create an variable to sums items
@@ -58,13 +50,9 @@ function myGraph() {
 	for (var i = 0; i < myarr.length; i++) {
 		varx=varx+50;
 		ctx.lineTo(varx, 300-parseInt(myarr[i]));
-		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));
-		ctx.stroke();
-		if(actSound){
-			setTimeout(xSound.play(), 1000);
-		}
+		ctx.fillText(myarr[i],varx+5, 300-parseInt(myarr[i]));		
 	}
-
+	ctx.stroke();
 	//draw the average in red color
 	if(average != 0){
 		ctx.beginPath();
