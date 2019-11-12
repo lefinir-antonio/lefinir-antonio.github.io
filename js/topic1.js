@@ -2,15 +2,25 @@ var myarr = [];
 var average = 0;
 var xSoundCalc = document.getElementById('myAudioCalc');        
 var xSoundClick = document.getElementById('myAudioClick');        
+var xSoundError = document.getElementById('myAudioError');    
  
 function addItem() {
 	//some checks
-	xSoundClick.play()
-	if (myarr.length >= 12) return;
-	if (!document.getElementById("name").value) return;
-	if (parseInt(document.getElementById("name").value) < 0 || parseInt(document.getElementById("name").value) > 300) return;
+	if (myarr.length >= 12) {
+		xSoundError.play()
+		return;
+	};
+	if (!document.getElementById("name").value) {
+		xSoundError.play()
+		return;
+	};
+	if (parseInt(document.getElementById("name").value) < 0 || parseInt(document.getElementById("name").value) > 300){
+		xSoundError.play()
+		return;
+	};
 	//save value into the array
 	myarr.push(document.getElementById("name").value);
+	xSoundClick.play()
 	//prints result
 	if (myarr.length != 12) document.getElementById('itemsLength').innerHTML = myarr.length + 1;
 	document.getElementById('items').innerHTML = "[" + myarr.join(" , ") + "]";
