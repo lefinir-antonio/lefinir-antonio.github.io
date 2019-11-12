@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<video autoplay loop mute id="myVideo">
+  <source src="pulse.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1 id="myTitle" >Video Properties: var video = document.getElementById("myVideo");</h1>
+  <p id="myAttribute"></p>
+ <button class="btn" id="myDec" onclick="myDec()" disabled>Speed -</button>  
+ <button class="btn" id="myInc" onclick="myInc()">Speed +</button>
+ <button class="btn" id="myPlay" onclick="myPlay()">Pause</button>
+ <button class="btn" id="myMute" onclick="mySound()">Mute</button>   
+</div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
