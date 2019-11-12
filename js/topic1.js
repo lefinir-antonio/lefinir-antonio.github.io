@@ -7,6 +7,7 @@ var xSoundError = document.getElementById('myAudioError');
 function addItem() {
 	//some checks
 	if (myarr.length >= 12) {
+		document.getElementById("myLoader").style.visibility = 'hidden';
 		xSoundError.play()
 		return;
 	};
@@ -21,14 +22,12 @@ function addItem() {
 	//enable loader during the charge of data
 	if (myarr.length < 12) {
 		document.getElementById("myLoader").style.visibility = 'visible';
-	} else {
-		document.getElementById("myLoader").style.visibility = 'hidden';
 	};
 	//save value into the array
 	myarr.push(document.getElementById("name").value);
 	xSoundClick.play()
 	//prints result
-	if (myarr.length != 12) document.getElementById('itemsLength').innerHTML = myarr.length + 1;
+	if (myarr.length != 12) document.getElementById('itemsLength').innerHTML = myarr.length + 1 +" of 12";
 	document.getElementById('items').innerHTML = "[" + myarr.join(" , ") + "]";
 	//set focus over textbox
 	document.getElementById("name").focus();
