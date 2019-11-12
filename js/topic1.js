@@ -18,6 +18,12 @@ function addItem() {
 		xSoundError.play()
 		return;
 	};
+	//enable loader during the charge of data
+	if (myarr.length < 12) {
+		document.getElementById("myLoader").style.visibility = 'visible';
+	} else {
+		document.getElementById("myLoader").style.visibility = 'hidden';
+	};
 	//save value into the array
 	myarr.push(document.getElementById("name").value);
 	xSoundClick.play()
@@ -49,6 +55,7 @@ function infoArray() {
 }
 
 function myGraph() {
+	document.getElementById("myLoader").style.visibility = 'hidden';
 	varx=0;
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
