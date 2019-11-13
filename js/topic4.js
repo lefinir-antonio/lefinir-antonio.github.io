@@ -172,11 +172,10 @@ function changeBtn() {
     if(!btnChange){
       btns[i].style.backgroundColor = '#231f20';
       btns[i].style.color = '#8E793E';
-      btnChange=true;
     } else {
       btns[i].style.backgroundColor = '#8E793E';
       btns[i].style.color ='#231f20';      
-      btnChange=false;
     }
   }
+  btnChange=!btnChange;
 }
