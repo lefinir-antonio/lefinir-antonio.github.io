@@ -159,7 +159,7 @@ function cleanTable(){
   var cell3 = row.insertCell(2);
 
 
-  cell1.innerHTML = "Date";
+  cell1.innerHTML = "City";
   cell2.innerHTML = "Temperature";
   cell3.innerHTML = "Status";
 
