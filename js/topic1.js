@@ -1,6 +1,5 @@
 var myarr = [];
-var average = 0;
-var xSoundCalc = document.getElementById('myAudioCalc');        
+var average = 0;      
 var xSoundClick = document.getElementById('myAudioClick');        
 var xSoundError = document.getElementById('myAudioError');    
  
@@ -35,7 +34,6 @@ function addItem() {
 
 function infoArray() {
 	//I assume that the first item is the max and the min
-	xSoundCalc.play()
 	max=parseInt(myarr[0]);
 	min=parseInt(myarr[0]);
 	//I create an variable to sums items
