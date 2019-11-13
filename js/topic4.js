@@ -39,16 +39,19 @@ function viewWeather(coutryId) {
     if (this.readyState == 4 && this.status == 200) {
          wCountry = JSON.parse(this.responseText);
          myF = ((wCountry.main.temp.toFixed(2)-273.15) * 9/5) + 32; //convert temperature kelvin to farenheit
+   
          //create table with information
 
          var row = table.insertRow(-1);
          var cell1 = row.insertCell(0);
          var cell2 = row.insertCell(1);
          var cell3 = row.insertCell(2);
+    
 
          cell1.innerHTML = wCountry.name;
          cell2.innerHTML = myF.toFixed(2) + "F";
          cell3.innerHTML = wCountry.weather[0].description;
+         
         /*old way
          myRow = '<td>' + wCountry.name + '</td><td>' + myF.toFixed(2) + ' F</td><td>'+ wCountry.weather[0].description + '</td>';
          document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
@@ -146,7 +149,18 @@ function check(){
 }
 
 function cleanTable(){
-  for(var i = table.rows.length - 1; i > 0; i--){
+  for(var i = table.rows.length; i > 0; i--){
     table.deleteRow(i);
   }
+
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+
+
+  cell1.innerHTML = "Date";
+  cell2.innerHTML = "Temperature";
+  cell3.innerHTML = "Status";
+
 }
