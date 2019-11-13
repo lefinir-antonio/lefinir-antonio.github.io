@@ -12,10 +12,16 @@ Crear objeto, guardarlo y recuperarlo (add child tablas):
 Topic 2: Object Creation Functions, Inheritance, Properties, Methods, Instantiation (objetos de asistencia dominical)
 Topic 3: JSON Parse, Stringify (guardar el registro o consultar registros de asistencia dominical)
 Topic 5: Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects. (mismo que con el 3)
-Topic 6: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. (dibujar los registros tipos tabla pero con el dom)
-Topic 7: Manipulating CSS Class Properties Using JavaScript. (change skin??)
-Topic 8: Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript. (poner un loader mientras se ve el video)
 
+Topic 6: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. (dibujar los registros tipos tabla pero con el dom)
+
+Topic 7: Manipulating CSS Class Properties Using JavaScript. (change skin??)
+
+Topic 8: Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript. (poner un loader mientras se ve el video)
 Topic 10: HTML5 Tags - Video, Audio, and Canvas. (tutorial ver video poner audio a los botones)
+
+
+hacer un menu hamburguer
+on touch with street fighter
 
 
