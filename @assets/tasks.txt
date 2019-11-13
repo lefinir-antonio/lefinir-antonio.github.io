@@ -15,6 +15,7 @@ Topic 5: Local Storage API, Storing and Retrieving Simple Data, Arrays, Associat
 Topic 6: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. (dibujar los registros tipos tabla pero con el dom)
 Topic 7: Manipulating CSS Class Properties Using JavaScript. (change skin??)
 Topic 8: Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript. (poner un loader mientras se ve el video)
+
 Topic 10: HTML5 Tags - Video, Audio, and Canvas. (tutorial ver video poner audio a los botones)
 
 
