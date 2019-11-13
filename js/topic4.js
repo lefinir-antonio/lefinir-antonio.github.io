@@ -12,7 +12,8 @@ var table = document.getElementById("myTable");
 function viewCity() {
   document.getElementById("myLoader").style.visibility = 'visible';
   document.getElementById('myTitle').innerHTML = 'Please wait...';
-  document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
+  cleanTable();
+  //document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   if(count_loops !=1){ 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -122,7 +123,8 @@ function saveReg(){
 
 //clear storage
 function clearReg(){
-  document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
+  //document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
+  cleanTable();
   document.getElementById("registers-dropdown").options.length = 1;
   document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
   db = {table:[]};
@@ -141,4 +143,10 @@ function check(){
           }
           count_loops = 0;
       }        
+}
+
+function cleanTable(){
+  for(var i = table.rows.length - 1; i > 0; i--){
+    table.deleteRow(i);
+  }
 }
