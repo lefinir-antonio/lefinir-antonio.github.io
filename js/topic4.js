@@ -7,6 +7,7 @@ var aLine;
 var aTable=[];
 db = {table:[]};
 var table = document.getElementById("myTable");
+var btnChange = false;
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
@@ -163,4 +164,19 @@ function cleanTable(){
   cell2.innerHTML = "Temperature";
   cell3.innerHTML = "Status";
 
+}
+
+function changeBtn() {
+  var btns = document.getElementsByClassName('btn');
+  for(i = 0; i < btns.length; i++) {
+    if(!btnChange){
+      btns[i].style.backgroundColor = '#231f20';
+      btns[i].style.color = '#8E793E';
+      btnChange=true;
+    } else {
+      btns[i].style.backgroundColor = '#8E793E';
+      btns[i].style.color ='#231f20';      
+      btnChange=false;
+    }
+  }
 }
