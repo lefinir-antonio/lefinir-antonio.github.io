@@ -28,6 +28,7 @@ function addItem() {
 	//prints result
 	console.log(myarr.length);
 	if (myarr.length != 12) document.getElementById('itemsLength').innerHTML = myarr.length + 1 +" of 12";
+		else document.getElementById("myLoader").style.visibility = 'hidden';
 	document.getElementById('items').innerHTML = "[" + myarr.join(" , ") + "]";
 	//set focus over textbox
 	document.getElementById("name").focus();
