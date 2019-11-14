@@ -165,7 +165,7 @@ function cleanTable(){
   cell3.innerHTML = "Status";
 
 }
-
+//dom manage and css classes
 function changeBtn() {
   var btns = document.getElementsByClassName('btn');
   for(i = 0; i < btns.length; i++) {
