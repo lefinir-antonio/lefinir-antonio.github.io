@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CIT261 - Antonio Lefinir - Topic 9</title>
+  <title>CIT261 - Antonio Lefinir - Topic 10</title>
   <meta name="alefinir" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +23,22 @@
 
   <main>
     <h2>Topic 9: Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events.</h2>
-   
     <div class="wrapper">
 
+      <audio id="myAudio">
+        <source src="../audio/pina.ogg" type="audio/ogg">
+        <source src="../audio/pina.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="myAudio2">
+        <source src="../audio/hadouryu.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>      
+
+      <button id="myButton" onclick="playAudio()" type="button">Hit!</button>
+      <img id="myImage" src="../img/1.png" width="131" height="190" alt="character" ontouchstart="playAudio()">
+    
+    
     </div>
   </main>
 
@@ -46,7 +59,7 @@
     <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
   </footer>
 
-  <script src="../js/topic7.js"></script>
+  <script src="../js/topic10.js"></script>
 </body>
 
 </html>

@@ -11,10 +11,10 @@
   <link href="../css/main.css" rel="stylesheet">
 </head>
 
-<body id="body">
-  <header id="header">
-    <img id="img" src="../img/yo.jpg" width="177" height="212" alt="Antonio Lefinir Profile Picture">
-    <h1 id="h1">Antonio Lefinir</h1>
+<body>
+  <header>
+    <img src="../img/yo.jpg" width="177" height="212" alt="Antonio Lefinir Profile Picture">
+    <h1>Antonio Lefinir</h1>
   </header>
 
   <nav>
@@ -22,27 +22,42 @@
   </nav>
 
   <main>
-    <h2>Topic 10: HTML5 Tags - Video, Audio, and Canvas.</h2>
+    <h2>Topic 10: HTML5 Tags - Video, Audio, and Canvas</h2>
+    <div class="loader" id="myLoader"></div>
     <div class="wrapper">
-
-      <audio id="myAudio">
-        <source src="../audio/pina.ogg" type="audio/ogg">
-        <source src="../audio/pina.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <audio id="myAudio2">
-        <source src="../audio/hadouryu.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>      
-
-      <button id="myButton" onclick="playAudio()" type="button">Hit!</button>
-      <img id="myImage" src="../img/1.png" width="131" height="190" alt="character" ontouchstart="playAudio()">
-    
-    
+      <h3>Meeting Attendance Calculator</h3>
+      <h4>Historical Attendance (12 Months): </h4>
+      <div id="items">[]</div>
+      <h4>Month to Enter: <span id="itemsLength">1 of 12</span></h4>
+      <input id="name" type="number" autocomplete="off">
+      <button class="btn" onclick="addItem()">Add</button>
+      <button class="btn" onclick="infoArray()">Analyze and Graph</button>
+      <button class="btn" onclick="location.href='../help/index.html';">How it works</button>         
     </div>
+
+    <div class="wrapper">
+      <canvas id="myCanvas" width="650" height="300" style="border:1px solid #d3d3d3;">
+      </canvas>
+    </div>
+
+    <div class="wrapper">
+      <h4 id="results">Results: </h4>
+    </div>
+
+    <audio id="myAudioClick">
+      <source src="../audio/click.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="myAudioError">
+      <source src="../audio/cuack.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
   </main>
 
-  <footer id="footer">
+
+  <footer>
     <p> <a href="../index.html">Home</a>
         <a href="../code_topic1/index.html">Topic1</a>
         <a href="../code_topic2/index.html">Topic2</a>        
@@ -54,7 +69,7 @@
         <a href="../code_topic8/index.html">Topic8</a>
         <a href="../code_topic9/index.html">Topic9</a>
         <a href="../code_topic10/index.html">Topic10</a>
-        <a href="../code_topic11/index.html">Topic11</a>
+        <a href="../code_topic11/index.html">Topic11</a>   
     <p>© 2019 Antonio Lefinir, Uruguay          
     <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
   </footer>
