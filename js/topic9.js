@@ -31,6 +31,6 @@ function playAudio() {
 function loaderDemo(){
     document.getElementById("myLoader").style.visibility = 'visible';
     alert("Welcome!!");
-    document.getElementById("myLoader").style.visibility = 'hidden';
+    //document.getElementById("myLoader").style.visibility = 'hidden';
 }
 
