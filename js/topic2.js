@@ -66,7 +66,7 @@ function viewWeather(coutryId) {
            document.getElementById("myLoader").style.visibility = 'hidden';
            document.getElementById('myTitle').innerHTML = 'Uruguay Weather';
          }
-         console.log(aLine);
+         console.log("This is a line object",aLine);
          console.log(aTable);
         }
     };
