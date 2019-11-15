@@ -1,4 +1,5 @@
 function playAudio() { 
+    document.getElementById("myLoader").style.visibility = 'hidden';
     var image = document.getElementById('myImage');
     if (image.src.match("2.png")) {
         image.src = "../img/3.png";
@@ -31,6 +32,5 @@ function playAudio() {
 function loaderDemo(){
     document.getElementById("myLoader").style.visibility = 'visible';
     alert("Welcome!!");
-    //document.getElementById("myLoader").style.visibility = 'hidden';
 }
 
