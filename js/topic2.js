@@ -21,6 +21,7 @@ function viewCity() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
+            //this the id properties of the first object of the table
             viewWeather(myArr[i].id);
         }
         count_loops= count_loops +1;
