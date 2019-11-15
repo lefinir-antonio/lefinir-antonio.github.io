@@ -38,7 +38,9 @@ function viewWeather(coutryId) {
     var myF = 0;
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+        //I get every object from json file
          wCountry = JSON.parse(this.responseText);
+         console.log("This is a country", wCountry);
          myF = ((wCountry.main.temp.toFixed(2)-273.15) * 9/5) + 32; //convert temperature kelvin to farenheit
    
          //create table with information
@@ -73,22 +75,6 @@ function viewWeather(coutryId) {
 
 }
 
-//add table to db
-//function addReg(){
-  //var d = new Date();
-  //myObj = {date:d.toString(),registers:[{city:"Montevideo",temperature:"58 F",status:"cloudy"},{city:"Delta del Tigre",temperature:"60 F",status:"light rain"},{city:"Tacuarembo", temperature:"77 F", status:"sunny"},]}
-  //db.table.push(myObj);
-  //console.log(db);
-
-
-    //guardar el objeto
-   // var d = new Date();  
-    //oneReg = {date:d.toString(), registers: aTable};
-    //db.table.push(oneReg);
-
-    //***************************************
-
-//}
 
 //populate the dropdown with old registers
 function viewReg(){
