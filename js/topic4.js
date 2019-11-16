@@ -169,6 +169,7 @@ function cleanTable(){
 function changeBtn() {
   var btns = document.getElementsByClassName('btn');
   for(i = 0; i < btns.length; i++) {
+    console.log(btns[i]);
     if(!btnChange){
       btns[i].style.backgroundColor = '#231f20';
       btns[i].style.color = '#8E793E';
