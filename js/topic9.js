@@ -29,7 +29,7 @@ function playAudio() {
 
 }
 
-function (){
+function() {
     document.getElementById("myLoader").style.visibility = 'visible';
     alert("Welcome!!");
 }
