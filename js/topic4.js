@@ -191,7 +191,7 @@ function createFooter(){
       a.setAttribute('href',"../code_topic" + i + "/index.html");
       a.innerHTML = "Topic" + i;
     }
-    document.getElementsById('pFooter')[0].appendChild(a);
+    document.getElementById('pFooter')[0].appendChild(a);
   }
 
 }
