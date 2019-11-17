@@ -180,3 +180,18 @@ function changeBtn() {
   }
   btnChange=!btnChange;
 }
+function createFooter(){
+
+  for (var i = 0; i < 13; i++) {
+    var a = document.createElement('a');
+    if(i==0){
+      a.setAttribute('href',"../index.html");
+      a.innerHTML = "Home";      
+    } else{
+      a.setAttribute('href',"../code_topic" + i + "/index.html");
+      a.innerHTML = "Topic" + i;
+    }
+    document.getElementsById('pFooter')[0].appendChild(a);
+  }
+
+}
