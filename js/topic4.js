@@ -182,6 +182,8 @@ function changeBtn() {
   }
   btnChange=!btnChange;
 }
+
+
 function createFooter(){
 
   for (var i = 0; i < 13; i++) {
