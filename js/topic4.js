@@ -8,6 +8,8 @@ var aTable=[];
 db = {table:[]};
 var table = document.getElementById("myTable");
 var btnChange = false;
+//create footer
+window.onload = createFooter();
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
