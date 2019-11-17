@@ -188,10 +188,10 @@ function createFooter(){
     var a = document.createElement('a');
     if(i==0){
       a.setAttribute('href',"../index.html");
-      a.innerHTML = "Home";      
+      a.innerHTML = "Home ";      
     } else{
       a.setAttribute('href',"../code_topic" + i + "/index.html");
-      a.innerHTML = "Topic" + i;
+      a.innerHTML = "Topic" + i + " ";
     }
     document.getElementById('pFooter').appendChild(a);
   }
