@@ -185,7 +185,6 @@ function changeBtn() {
 
 
 function createFooter(){
-
   for (var i = 0; i < 13; i++) {
     var a = document.createElement('a');
     if(i==0){
@@ -197,5 +196,5 @@ function createFooter(){
     }
     document.getElementById('pFooter').appendChild(a);
   }
-
 }
+
