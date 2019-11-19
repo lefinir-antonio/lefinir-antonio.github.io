@@ -83,14 +83,26 @@ function myGraph() {
 	}
 }
 function createBar(){
+	//create array months
 	var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-	for (i = 0; i < month.length; i++) {
+	//reset div avoid appendchild infinite times
+	document.getElementById("gBar").innerHTML = "";
+	//create a div for every moth with attendance information
+	for (i = 0; i < myarr.length; i++) {
 	  var d = document.createElement('div'); 
-	  d.setAttribute('class',"bar");
-	  d.onmousemove = function () { 
-	  	this.style.width = myarr[i]+"px";
-	  };
+	  d.setAttribute('class',month[i]);
 	  d.innerHTML = month[i];
 	  document.getElementById('gBar').appendChild(d);
+
+		//adding css on the fly animation to a div recently created
+		var css = "."+month[i]+" {width: 1px; height: 50px; background: #231f20; -webkit-transition: width 2s; color:#8E793E ;} " + "."+month[i]+":hover {width: "+myarr[i]+"px;}";
+		var style = document.createElement('style');
+
+		if (style.styleSheet) {
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		document.getElementsByTagName('head')[0].appendChild(style);
 	}
   }
