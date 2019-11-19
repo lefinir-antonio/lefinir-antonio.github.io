@@ -87,6 +87,9 @@ function createBar(){
 	for (i = 0; i < month.length; i++) {
 	  var d = document.createElement('div'); 
 	  d.setAttribute('class',"bar");
+	  d.onmousemove = function () { 
+	  	this.style.width = myarr[i]+"px";
+	  };
 	  d.innerHTML = month[i];
 	  document.getElementById('gBar').appendChild(d);
 	}
