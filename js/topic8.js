@@ -95,7 +95,7 @@ function createBar(){
 	  document.getElementById('gBar').appendChild(d);
 
 		//adding css on the fly animation to a div recently created
-		var css = "."+month[i]+" {width: 1px; height: 50px; background: #231f20; -webkit-transition: width 2s; color:#8E793E ;} " + "."+month[i]+":hover {width: "+myarr[i]+"px;}";
+		var css = "."+month[i]+" {width: 1px; height: 50px; background: #434a54; -webkit-transition: width 2s; color:#8E793E ;} " + "."+month[i]+":hover {width: "+myarr[i]+"px;}";
 		var style = document.createElement('style');
 
 		if (style.styleSheet) {
