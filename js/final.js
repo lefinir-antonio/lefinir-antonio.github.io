@@ -9,7 +9,7 @@ db = {table:[]};
 var table = document.getElementById("myTable");
 var btnChange = false;
 //create footer
-window.onload = createFooter();
+window.onload = viewReg();
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
@@ -125,6 +125,7 @@ function saveReg(){
     aTable=[];
     count_loops = 0;
   }
+  viewReg();
 }
 
 //clear storage
