@@ -9,10 +9,16 @@ db = {table:[]};
 var table = document.getElementById("myTable");
 var btnChange = false;
 var imgCities=new Array(
-  ['img/1.jpg','uno'],
-  ['img/2.jpg','dos'],
-  ['img/3.jpg','tres'],
-  ['img/4.jpg','cuatro']
+  ['img/1.jpg','Montevideo'],
+  ['img/2.jpg','Colonia'],
+  ['img/3.jpg','San Jose'],
+  ['img/4.jpg','Rivera'],
+  ['img/5.jpg','Salto'],
+  ['img/6.jpg','Young'],
+  ['img/7.jpg','La Paz'],
+  ['img/8.jpg','Cerrito'],
+  ['img/9.jpg','Las Piedras'],
+  ['img/10.jpg','Durazno']
 );
 var counter=0;
 //create slide img and charge old registers
