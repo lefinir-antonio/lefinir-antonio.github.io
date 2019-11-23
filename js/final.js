@@ -192,5 +192,5 @@ function createFooter(){
 }
 
 function slideImg(){
-  alert("hola");
+  //alert("hola");
 }
