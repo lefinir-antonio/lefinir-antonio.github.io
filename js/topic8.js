@@ -85,7 +85,7 @@ function myGraph() {
 function createBar(){
 	//create array months
 	var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-	//reset div avoid appendchild infinite times
+	//reset div to avoid appendchild infinite times
 	document.getElementById("gBar").innerHTML = "";
 	//create a div for every moth with attendance information
 	for (i = 0; i < myarr.length; i++) {
