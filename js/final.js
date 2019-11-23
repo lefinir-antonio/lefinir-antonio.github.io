@@ -196,7 +196,7 @@ function changeBtn() {
   document.getElementById("registers-dropdown").classList.toggle("btnBlack");
   //change loader class also
   //document.getElementById("myLoader").classList.toggle("loaderBlack");
-  document.getElementById("myLoader").classList.toggle("lds-facebook");
+  document.getElementById("myLoader").classList.toggle("lds-ripple");
 }
 
 
