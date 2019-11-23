@@ -143,7 +143,7 @@ tr:nth-child(even) {
 	border-radius: 50%;
 	border-top: 16px solid  #231f20;
 	border-right: 16px solid #ad974f;
-	border-bottom: 16px solid #8E793E;
+	border-bottom: 16px solid #231f20;
 	width: 60px;
 	height: 60px;
 	-webkit-animation: spin 2s linear infinite;
