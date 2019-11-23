@@ -137,6 +137,29 @@ tr:nth-child(even) {
 	100% { transform: rotate(360deg); }
   }
 
+
+  .loaderBlack {
+	border: 16px solid #ad974f;
+	border-radius: 50%;
+	border-top: 16px solid  #231f20;
+	border-right: 16px solid #EAEAEA;
+	border-bottom: 16px solid #8E793E;
+	width: 60px;
+	height: 60px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+
   div.polaroid {
 	width: 177px;
 	padding: 10px 10px 20px 10px;
@@ -157,6 +180,8 @@ tr:nth-child(even) {
 	margin-right: 50px;
 	text-align: center;
   }
+
+
 /*
   div.rotate_right p {
 	text-align: center;

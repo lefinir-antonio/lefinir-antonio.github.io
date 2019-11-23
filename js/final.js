@@ -188,12 +188,14 @@ function changeBtn() {
     }
   }
   btnChange=!btnChange;*/
+  //change buttons class
   document.getElementById("myButton").classList.toggle("btnBlack");
   document.getElementById("savetoDB").classList.toggle("btnBlack");
   document.getElementById("clearReg").classList.toggle("btnBlack");
   document.getElementById("chgBtn").classList.toggle("btnBlack");
   document.getElementById("registers-dropdown").classList.toggle("btnBlack");
-
+  //change loader class also
+  document.getElementById("myLoader").classList.toggle("loaderBlack");
 }
 
 
