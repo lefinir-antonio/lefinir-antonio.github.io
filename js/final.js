@@ -191,6 +191,6 @@ function createFooter(){
   }
 }
 
-fuction slideImg(){
+function slideImg(){
   alert("hola");
 }
