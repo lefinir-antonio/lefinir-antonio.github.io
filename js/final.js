@@ -9,7 +9,14 @@ db = {table:[]};
 var table = document.getElementById("myTable");
 var btnChange = false;
 //create footer
-window.onload = viewReg();
+window.onload=function()
+  {
+    slideImg();
+    setInterval(slideImg,5000);
+    viewReg();
+}
+
+
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
@@ -75,22 +82,7 @@ function viewWeather(coutryId) {
 
 }
 
-//add table to db
-//function addReg(){
-  //var d = new Date();
-  //myObj = {date:d.toString(),registers:[{city:"Montevideo",temperature:"58 F",status:"cloudy"},{city:"Delta del Tigre",temperature:"60 F",status:"light rain"},{city:"Tacuarembo", temperature:"77 F", status:"sunny"},]}
-  //db.table.push(myObj);
-  //console.log(db);
 
-
-    //guardar el objeto
-   // var d = new Date();  
-    //oneReg = {date:d.toString(), registers: aTable};
-    //db.table.push(oneReg);
-
-    //***************************************
-
-//}
 
 //populate the dropdown with old registers
 function viewReg(){
@@ -199,3 +191,6 @@ function createFooter(){
   }
 }
 
+fuction slideImg(){
+  alert("hola");
+}
