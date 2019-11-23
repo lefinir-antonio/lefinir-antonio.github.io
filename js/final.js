@@ -6,6 +6,7 @@ var oneReg = {date:"", registers: []};
 var aLine;
 var aTable=[];
 db = {table:[]};
+var xSoundClick = document.getElementById('myAudioClick');
 var table = document.getElementById("myTable");
 //var btnChange = false;
 var imgCities=new Array(
@@ -33,6 +34,7 @@ window.onload=function()
 
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
+  xSoundClick.play()
   document.getElementById("myLoader").style.visibility = 'visible';
   document.getElementById('myTitle').innerHTML = 'Please wait...';
   cleanTable();
@@ -122,6 +124,7 @@ function viewReg(){
 //save registers to storage
 function saveReg(){
   if (aTable.length != 0) {
+    xSoundClick.play();
     var d = new Date();  
     oneReg = {date:d.toString().slice(0, 24), registers: aTable};
     db.table.push(oneReg);
@@ -136,6 +139,7 @@ function saveReg(){
 //clear storage
 function clearReg(){
   //document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
+  xSoundClick.play();
   cleanTable();
   document.getElementById("registers-dropdown").options.length = 1;
   document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
@@ -189,6 +193,7 @@ function changeBtn() {
   }
   btnChange=!btnChange;*/
   //change buttons class
+  xSoundClick.play();
   document.getElementById("myButton").classList.toggle("btnBlack");
   document.getElementById("savetoDB").classList.toggle("btnBlack");
   document.getElementById("clearReg").classList.toggle("btnBlack");
