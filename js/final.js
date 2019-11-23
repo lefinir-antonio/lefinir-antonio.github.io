@@ -150,6 +150,7 @@ function clearReg(){
 
 //draw the new table with the old register selected
 function check(){
+  xSoundClick.play();
     var elem = document.getElementById('registers-dropdown');
     document.getElementById('myTable').innerHTML ='<tr><td>Date</td><td>City</td><td>Temperature</td><td>Status</td></tr>';
     if(elem.selectedIndex != 0){
