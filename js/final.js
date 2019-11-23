@@ -8,7 +8,14 @@ var aTable=[];
 db = {table:[]};
 var table = document.getElementById("myTable");
 var btnChange = false;
-//create footer
+var imgCities=new Array(
+  ['img/1.jpg','uno'],
+  ['img/2.jpg','dos'],
+  ['img/3.jpg','tres'],
+  ['img/4.jpg','cuatro']
+);
+var counter=0;
+//create slide img and charge old registers
 window.onload=function()
   {
     slideImg();
@@ -193,4 +200,7 @@ function createFooter(){
 
 function slideImg(){
   //alert("hola");
+  counter++
+  document.getElementById("iCity").src=imgCities[counter%imgCities.length][0];
+  document.getElementById("caption").innerHTM=imgCities[counter%imgCities.length][1];
 }
