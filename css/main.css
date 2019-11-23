@@ -100,9 +100,9 @@ tr:nth-child(even) {
   .btn:hover {opacity: 0.6}
   
   .btnBlack {
-	background-color: #8E793E;
+	background-color: #231f20;
 	border: none;
-	color: #231f20;
+	color: #8E793E;
 	padding: 14px 30px;
 	text-align: center;
 	font-size: 14px;
