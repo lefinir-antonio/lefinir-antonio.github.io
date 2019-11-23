@@ -215,5 +215,5 @@ function slideImg(){
   //alert("hola");
   counter++
   document.getElementById("iCity").src=imgCities[counter%imgCities.length][0];
-  document.getElementById("caption").innerHTML=imgCities[counter%imgCities.length][1];
+  document.getElementById("caption").innerHTML=imgCities[counter%imgCities.length][1] + " City";
 }
