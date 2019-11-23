@@ -99,6 +99,21 @@ tr:nth-child(even) {
   
   .btn:hover {opacity: 0.6}
   
+  .btnBlack {
+	background-color: #8E793E;
+	border: none;
+	color: #231f20;
+	padding: 14px 30px;
+	text-align: center;
+	font-size: 14px;
+	margin: 2px 1px;
+	opacity: 1;
+	transition: 0.3s;
+  }
+  
+  .btnBlack:hover {opacity: 0.6}
+
+
   .loader {
 	margin: 0 auto;
 	visibility: hidden;

@@ -175,6 +175,7 @@ function cleanTable(){
 }
 //dom manage and css classes
 function changeBtn() {
+  /*
   var btns = document.getElementsByClassName('btn');
   for(i = 0; i < btns.length; i++) {
     console.log(btns[i]);
@@ -186,7 +187,10 @@ function changeBtn() {
       btns[i].style.color ='#231f20';      
     }
   }
-  btnChange=!btnChange;
+  btnChange=!btnChange;*/
+  document.getElementById("myButton").classList.toggle("btnBlack");
+
+
 }
 
 
