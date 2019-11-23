@@ -157,6 +157,9 @@ tr:nth-child(even) {
 	margin-right: 50px;
   }
 
+caption {
+	text-align: center;
+}
 
 /*
   .bar {

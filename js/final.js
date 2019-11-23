@@ -7,7 +7,7 @@ var aLine;
 var aTable=[];
 db = {table:[]};
 var table = document.getElementById("myTable");
-var btnChange = false;
+//var btnChange = false;
 var imgCities=new Array(
   ['img/1.jpg','Montevideo'],
   ['img/2.jpg','Colonia'],
@@ -189,7 +189,10 @@ function changeBtn() {
   }
   btnChange=!btnChange;*/
   document.getElementById("myButton").classList.toggle("btnBlack");
-
+  document.getElementById("savetoDB").classList.toggle("btnBlack");
+  document.getElementById("clearReg").classList.toggle("btnBlack");
+  document.getElementById("chgBtn").classList.toggle("btnBlack");
+  document.getElementById("registers-dropdown").classList.toggle("btnBlack");
 
 }
 
