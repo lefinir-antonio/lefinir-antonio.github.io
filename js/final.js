@@ -195,8 +195,8 @@ function changeBtn() {
   document.getElementById("chgBtn").classList.toggle("btnBlack");
   document.getElementById("registers-dropdown").classList.toggle("btnBlack");
   //change loader class also
-  //document.getElementById("myLoader").classList.toggle("loaderBlack");
-  document.getElementById("myLoader").classList.toggle("lds-ripple");
+  document.getElementById("myLoader").classList.toggle("loaderBlack");
+  //document.getElementById("myLoader").classList.toggle("lds-ripple");
 }
 
 
