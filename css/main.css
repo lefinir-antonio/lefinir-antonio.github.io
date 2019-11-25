@@ -86,9 +86,10 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-          background-color: #231f20;
-          color: #EAEAEA;
-    }
+    background-color: #231f20;
+    color: #EAEAEA;
+    font-weight: bold;
+}
 
 .btn {
 	background-color: #8E793E;
