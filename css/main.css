@@ -189,11 +189,12 @@ tr:hover {
   }
 
   @media screen and (max-width: 600px) {
-	body {
-	  background-color: olive;
-	  color: white;
+	div.polaroid {
+		display: none
 	}
-	header, main, footer {
-		display: inline-block;
+	.btn {
+		display:block;
+		float: none;
+    	width: 100%;
 	}
   }
