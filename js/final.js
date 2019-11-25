@@ -38,7 +38,7 @@ function viewCity() {
   document.getElementById("myLoader").style.visibility = 'visible';
   document.getElementById('myTitle').innerHTML = 'Please wait...';
   cleanTable();
-  //document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
+
   if(count_loops !=1){ 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -50,7 +50,7 @@ function viewCity() {
         count_loops= count_loops +1;
       }
     };
-    xmlhttp.open("GET", "../code_topic4/uruguay.json", true);
+    xmlhttp.open("GET", "../final/uruguay.json", true);
     xmlhttp.send();
   }
 
@@ -77,10 +77,6 @@ function viewWeather(coutryId) {
          cell2.innerHTML = myF.toFixed(2) + "F";
          cell3.innerHTML = wCountry.weather[0].description;
          
-        /*old way
-         myRow = '<td>' + wCountry.name + '</td><td>' + myF.toFixed(2) + ' F</td><td>'+ wCountry.weather[0].description + '</td>';
-         document.getElementById("myTable").insertRow(-1).innerHTML = myRow;
-          */
          //add row to object
          aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
          aTable.push(aLine);
@@ -106,12 +102,10 @@ function viewReg(){
     db = JSON.parse(text);
     document.getElementById("registers-dropdown").options.length = 1;
     document.getElementById("registers-dropdown").innerHTML + '<option value="None">-- Select --</option>';
-    //console.log(db.table[1].date);
-    //console.log(db.table[1].registers[0].city);
+
   //populate the combo box
     var ele = document.getElementById('registers-dropdown');
     for (var i = 0; i < db.table.length; i++) {
-        // POPULATE SELECT ELEMENT WITH JSON.
         ele.innerHTML = ele.innerHTML +
             '<option value="' + i + '">Register at: ' + db.table[i].date + '</option>';
     }
@@ -179,19 +173,6 @@ function cleanTable(){
 }
 //dom manage and css classes
 function changeBtn() {
-  /*
-  var btns = document.getElementsByClassName('btn');
-  for(i = 0; i < btns.length; i++) {
-    console.log(btns[i]);
-    if(!btnChange){
-      btns[i].style.backgroundColor = '#231f20';
-      btns[i].style.color = '#8E793E';
-    } else {
-      btns[i].style.backgroundColor = '#8E793E';
-      btns[i].style.color ='#231f20';      
-    }
-  }
-  btnChange=!btnChange;*/
   //change buttons class
   xSoundClick.play();
   document.getElementById("myButton").classList.toggle("btnBlack");
@@ -201,7 +182,6 @@ function changeBtn() {
   document.getElementById("registers-dropdown").classList.toggle("btnBlack");
   //change loader class also
   document.getElementById("myLoader").classList.toggle("loaderBlack");
-  //document.getElementById("myLoader").classList.toggle("lds-ripple");
 }
 
 
