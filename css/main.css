@@ -193,4 +193,7 @@ tr:hover {
 	  background-color: olive;
 	  color: white;
 	}
+	header, main, footer {
+		display: inline-block;
+	}
   }
