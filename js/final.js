@@ -30,8 +30,6 @@ window.onload=function()
     viewReg();
 }
 
-
-
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
   xSoundClick.play()
@@ -56,7 +54,7 @@ function viewCity() {
 
 }
 
-//with this function  I obtain all temperatures and status of every city
+//with this function I obtain all temperatures and status of every city
 function viewWeather(coutryId) { 
     var xmlhttp = new XMLHttpRequest();
     var myF = 0;
@@ -132,7 +130,6 @@ function saveReg(){
 
 //clear storage
 function clearReg(){
-  //document.getElementById('myTable').innerHTML ='<tr><td>City</td><td>Temperature</td><td>Status</td></tr>';
   xSoundClick.play();
   cleanTable();
   document.getElementById("registers-dropdown").options.length = 1;
@@ -155,6 +152,7 @@ function check(){
       }        
 }
 
+//this function wipe all rows of weather table
 function cleanTable(){
   for(var i = table.rows.length - 1; i > -1; i--){
     table.deleteRow(i);
@@ -171,7 +169,9 @@ function cleanTable(){
   cell3.innerHTML = "Status";
 
 }
-//dom manage and css classes
+
+
+//dom manage and css classes, change skin of buttons and loader
 function changeBtn() {
   //change buttons class
   xSoundClick.play();
@@ -185,6 +185,7 @@ function changeBtn() {
 }
 
 
+//this function create a footer dinamically
 function createFooter(){
   for (var i = 0; i < 13; i++) {
     var a = document.createElement('a');
@@ -199,8 +200,8 @@ function createFooter(){
   }
 }
 
+//this function show a slide of images from Uruguay
 function slideImg(){
-  //alert("hola");
   counter++
   document.getElementById("iCity").src=imgCities[counter%imgCities.length][0];
   document.getElementById("caption").innerHTML=imgCities[counter%imgCities.length][1] + " City";
