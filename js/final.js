@@ -2,14 +2,13 @@ var wCountry;
 var saveTable;
 var count_loops = 0;
 var db, myObj, myJSON, text, obj, line;
-//object to be saved 
+//object to be saved on storage a table (city name, temperature and status) and the date
 var oneReg = {date:"", registers: []};
 var aLine;
 var aTable=[];
 db = {table:[]};
 var xSoundClick = document.getElementById('myAudioClick');
 var table = document.getElementById("myTable");
-//var btnChange = false;
 var imgCities=new Array(
   ['img/1.jpg','Montevideo'],
   ['img/2.jpg','Colonia'],
@@ -31,6 +30,7 @@ window.onload=function()
     viewReg();
 }
 
+/*---AJAX---*/
 //this function use a json file to provide all cities of uruguay
 function viewCity() {
   xSoundClick.play()
@@ -91,10 +91,10 @@ function viewWeather(coutryId) {
     xmlhttp.send();
 
 }
+/*---AJAX---*/
 
-
-
-//populate the dropdown with old registers
+/*---LocalStorage---*/
+//populate the dropdown with old registers getItems
 function viewReg(){
     text = localStorage.getItem("testJSON");
     if (!!text) {
@@ -114,7 +114,7 @@ function viewReg(){
 }
 
 
-//save registers to storage
+//save registers to storage setItems
 function saveReg(){
   if (aTable.length != 0) {
     xSoundClick.play();
@@ -139,6 +139,7 @@ function clearReg(){
   localStorage.clear();
   count_loops = 0;
 }
+/*---LocalStorage---*/
 
 //draw the new table with the old register selected
 function check(){

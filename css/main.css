@@ -92,6 +92,8 @@ tr:hover {
 	font-style: italic;	
 }
 
+
+/*---CSS3 TRANSITION AND ANIMATION---*/
 .btn {
 	background-color: #8E793E;
 	border: none;
@@ -166,7 +168,9 @@ tr:hover {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
   }
+/*---CSS3 TRANSITION AND ANIMATION---*/
 
+/*---CSS3 TRANSFORMATIONS---*/
   div.polaroid {
 	width: 177px;
 	padding: 10px 10px 20px 10px;
@@ -188,6 +192,9 @@ tr:hover {
 	text-align: center;
   }
 
+/*---CSS3 TRANSFORMATIONS---*/
+
+/* support for mobile devices*/
   @media screen and (max-width: 600px) {
 	div.polaroid {
 		display: none
