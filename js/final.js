@@ -2,6 +2,7 @@ var wCountry;
 var saveTable;
 var count_loops = 0;
 var db, myObj, myJSON, text, obj, line;
+//object to be saved 
 var oneReg = {date:"", registers: []};
 var aLine;
 var aTable=[];
