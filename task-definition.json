@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::291115417128:role/ecsTaskExecutionRole",
+  "executionRole": "arn:aws:iam::291115417128:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -64,19 +64,7 @@
   "placementConstraints": [],
   "memory": "512",
   "taskRoleArn": null,
-  "compatibilities": [
-    "EC2",
-    "FARGATE"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:291115417128:task-definition/lefinir-antonio:1",
   "family": "lefinir-antonio",
-  "requiresAttributes": [
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-    },
     {
       "targetId": null,
       "targetType": null,
@@ -114,8 +102,6 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 1,
-  "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
   "volumes": []
