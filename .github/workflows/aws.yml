@@ -1,4 +1,4 @@
-# This workflow will build and push a new container image to Amazon ECR,
+# This workflow will build and push a new image to Amazon ECR,
 # and then will deploy a new task definition to Amazon ECS, on every push
 # to the master branch.
 #
@@ -45,6 +45,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
         aws-region: us-east-1
 
     - name: Login to Amazon ECR
@@ -70,7 +71,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: sample-app
+        container-name: lefinir-antonio
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
