@@ -23,12 +23,16 @@ var imgCities=new Array(
 );
 var counter=0;
 
+//declare map
+var map;
+
 //create slide img and charge old registers
 window.onload=function()
   {
     slideImg();
     setInterval(slideImg,5000);
     viewReg();
+    loadMapUY();
 }
 
 /*---AJAX---*/
@@ -289,17 +293,12 @@ function viewWeatherMap(coutryId) {
 
 
 function loadMapUY(){
-  var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+  map = L.map('mapUY').setView([-32.522779, -55.765835], 6.5);
 
       //declare map
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-    
-    
-        L.marker([-32.522779, -55.765835]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
 
 }
