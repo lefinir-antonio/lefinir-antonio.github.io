@@ -222,7 +222,7 @@ function viewCityMap() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         for (i=0; i < myArr.length; i++) {
-            //viewWeather(myArr[i].id);
+            viewWeatherMap(myArr[i].id);
             console.log(myArr[i].id);
         }
         count_loops= count_loops +1;
@@ -231,5 +231,63 @@ function viewCityMap() {
     xmlhttp.open("GET", "../final/uruguay.json", true);
     xmlhttp.send();
   }
+
+}
+
+
+//with this function I obtain all temperatures and status of every city
+function viewWeatherMap(coutryId) { 
+  var xmlhttp = new XMLHttpRequest();
+  var myF = 0;
+
+  //declare map
+  var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+  //end declare map
+
+  xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+       wCountry = JSON.parse(this.responseText);
+       myF = ((wCountry.main.temp.toFixed(2)-273.15) * 9/5) + 32; //convert temperature kelvin to farenheit
+ 
+       /*create table with information
+
+       var row = table.insertRow(-1);
+       var cell1 = row.insertCell(0);
+       var cell2 = row.insertCell(1);
+       var cell3 = row.insertCell(2);
+  
+
+       cell1.innerHTML = wCountry.name;
+       cell2.innerHTML = myF.toFixed(2) + "F";
+       cell3.innerHTML = wCountry.weather[0].description;
+       
+       //add row to object
+       aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
+       aTable.push(aLine);
+      */
+       var markerText = "<h1>" + wCountry.name + "</h1>" + "<br>" + myF.toFixed(2) + "F" + "<br>" + wCountry.weather[0].description;
+       var lon = wCountry.coord.lon;
+       var lat = wCountry.coord.lat;
+       L.marker([lon, lat]).addTo(map)
+       .bindPopup(markerText)
+       .openPopup();
+
+
+       //stop loader
+       if (coutryId == 3480825) {
+         document.getElementById("myLoader").style.visibility = 'hidden';
+         document.getElementById('myTitle').innerHTML = 'Uruguay Weather';
+       }
+       //console.log(aLine);
+       //console.log(aTable);
+      }
+  };
+  xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
+  xmlhttp.send();
 
 }
