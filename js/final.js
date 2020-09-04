@@ -306,8 +306,13 @@ function loadMapUY(){
         if (this.readyState == 4 && this.status == 200) {
             var myArr = JSON.parse(this.responseText);
             for (i=0; i < myArr.length; i++) {
-                viewWeatherMap(myArr[i].id);
-                console.log("[" + myArr[i].coord.lon + "," + myArr[i].coord.lat + "]");
+                //viewWeatherMap(myArr[i].id);
+
+                L.marker([myArr[i].coord.lat, myArr[i].coord.lon]).addTo(map)
+                .bindPopup("<h3>" + myArr[i].name + "</h3>")
+                .openPopup();
+
+                console.log("[" + myArr[i].coord.lat + "," + myArr[i].coord.lon + "]");
             }
             count_loops= count_loops +1;
           }
@@ -317,9 +322,7 @@ function loadMapUY(){
 
 
 
-        L.marker([-32.522779, -55.765835]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+
 
 
 
