@@ -22,6 +22,9 @@ var imgCities=new Array(
   ['img/10.jpg','Durazno']
 );
 var counter=0;
+
+  //declare map
+  var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
 //create slide img and charge old registers
 window.onload=function()
   {
@@ -240,8 +243,7 @@ function viewWeatherMap(coutryId) {
   var xmlhttp = new XMLHttpRequest();
   var myF = 0;
 
-  //declare map
-  var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
