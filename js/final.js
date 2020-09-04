@@ -264,13 +264,14 @@ function viewWeatherMap(coutryId) {
        //add row to object
        aLine = {city: wCountry.name, temperature: myF.toFixed(2), status: wCountry.weather[0].description};
        aTable.push(aLine);
-      */
+      
        var markerText = "<h1>" + wCountry.name + "</h1>" + "<br>" + myF.toFixed(2) + "F" + "<br>" + wCountry.weather[0].description;
        var lon = wCountry.coord.lon;
        var lat = wCountry.coord.lat;
        L.marker([lon, lat]).addTo(map)
        .bindPopup(markerText)
        .openPopup();
+       */
 
 
        //stop loader
@@ -306,7 +307,7 @@ function loadMapUY(){
             var myArr = JSON.parse(this.responseText);
             for (i=0; i < myArr.length; i++) {
                 viewWeatherMap(myArr[i].id);
-                console.log("[" + myArr[i].coord.lon + "," + myArr[i].coord.lat);
+                console.log("[" + myArr[i].coord.lon + "," + myArr[i].coord.lat + "]");
             }
             count_loops= count_loops +1;
           }
