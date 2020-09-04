@@ -24,7 +24,11 @@ var imgCities=new Array(
 var counter=0;
 
   //declare map
-  var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
 //create slide img and charge old registers
 window.onload=function()
   {
@@ -242,12 +246,6 @@ function viewCityMap() {
 function viewWeatherMap(coutryId) { 
   var xmlhttp = new XMLHttpRequest();
   var myF = 0;
-
-
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
 
   //end declare map
 
