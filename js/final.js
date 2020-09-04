@@ -24,13 +24,13 @@ var imgCities=new Array(
 var counter=0;
 
 
-
+var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
 
 //create slide img and charge old registers
 window.onload=function()
   {
     //declare map
-    var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
