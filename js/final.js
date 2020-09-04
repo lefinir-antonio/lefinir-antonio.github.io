@@ -23,9 +23,6 @@ var imgCities=new Array(
 );
 var counter=0;
 
-//declare map
-var map;
-
 //create slide img and charge old registers
 window.onload=function()
   {
@@ -293,12 +290,37 @@ function viewWeatherMap(coutryId) {
 
 
 function loadMapUY(){
-  map = L.map('mapUY').setView([-32.522779, -55.765835], 6.5);
+  var map = L.map('mapUY').setView([-32.522779, -55.765835], 6.5);
 
       //declare map
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+    
+    
+        
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            for (i=0; i < myArr.length; i++) {
+                viewWeatherMap(myArr[i].id);
+                console.log("[" + myArr[i].coord.lon + "," + myArr[i].coord.lat);
+            }
+            count_loops= count_loops +1;
+          }
+        };
+        xmlhttp.open("GET", "../final/uruguay.json", true);
+        xmlhttp.send();
+
+
+
+        L.marker([-32.522779, -55.765835]).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
+
+
+
 
 }
