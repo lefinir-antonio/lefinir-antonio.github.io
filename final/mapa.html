@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CIT261 - Antonio Lefinir - Final</title>
+  <meta name="alefinir" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body id="body">
+    <div class="polaroid rotate_right">
+        <img src="./img/11.jpg" width="155" height="212" id="iCity"alt="Cities of Uruguay Pictures">
+        <p id="caption">Cities</p>
+    </div>    
+  <header id="header">
+    <!--<img id="img" src="./img/11.jpg" width="177" height="212" alt="Antonio Lefinir Profile Picture">-->
+    <h1 id="h1">Antonio Lefinir</h1>
+  </header>
+
+  <nav>
+    <!--This space is for the future main menu-->
+  </nav>
+
+  <main>
+    <h2>Final Project</h2>
+    <div class="loader" id="myLoader"><div></div><div></div><div></div></div>
+    <h3 id="myTitle">Uruguay Weather</h3>
+    <div class="centerTable" id="centerTable">
+        <!--<button class="btn" id="myButton" onclick="viewCity()" type="button">View Weather Now</button>-->
+        <button class="btn" id="myButton" onclick="viewCityMap()" type="button">View Weather Map</button>
+        <button class="btn" id="savetoDB" onclick="saveReg()" type="button">Save to DB</button>
+        <button class="btn" id="clearReg" onclick="clearReg()" type="button">Clear all Records</button>
+        <button class="btn" id="chgBtn" onclick="changeBtn()">Change Buttons</button>
+        <select class="btn" id="registers-dropdown" name="oldReg" onChange="check()">
+            <option value="None">-- Previous Records --</option>
+        </select>
+        <!-- <table id="myTable">
+            <tr>
+              <td>City</td>
+              <td>Temperature</td>
+              <td>Status</td>
+            </tr>
+        </table>      -->
+      <div id="mapUY">
+        
+      </div>
+
+    </div>
+    <audio id="myAudioClick">
+        <source src="../audio/click.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>  
+  </main>
+
+  <footer id="footer">
+    <p>© 2019 Antonio Lefinir, Uruguay          
+    <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+  </footer>
+  <script src="../js/final.js"></script>
+</body>
+
+</html>

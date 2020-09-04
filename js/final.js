@@ -208,3 +208,28 @@ function slideImg(){
   document.getElementById("iCity").src=imgCities[counter%imgCities.length][0];
   document.getElementById("caption").innerHTML=imgCities[counter%imgCities.length][1] + " City";
 }
+
+//this function use a json file to provide all cities of uruguay
+function viewCityMap() {
+  xSoundClick.play()
+  document.getElementById("myLoader").style.visibility = 'visible';
+  document.getElementById('myTitle').innerHTML = 'Please wait...';
+  //cleanTable();
+
+  if(count_loops !=1){ 
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        for (i=0; i < myArr.length; i++) {
+            //viewWeather(myArr[i].id);
+            console.log(myArr[i].id);
+        }
+        count_loops= count_loops +1;
+      }
+    };
+    xmlhttp.open("GET", "../final/uruguay.json", true);
+    xmlhttp.send();
+  }
+
+}
