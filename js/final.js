@@ -23,23 +23,9 @@ var imgCities=new Array(
 );
 var counter=0;
 
-
-var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
-
 //create slide img and charge old registers
 window.onload=function()
   {
-    //declare map
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-
-    L.marker([-32.522779, -55.765835]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-
     slideImg();
     setInterval(slideImg,5000);
     viewReg();
@@ -297,5 +283,23 @@ function viewWeatherMap(coutryId) {
   };
   xmlhttp.open("GET", 'https://api.openweathermap.org/data/2.5/weather?id=' + coutryId + "&appid=348f31d3a42d06a5db44f7fa4b9f34a9", true);
   xmlhttp.send();
+
+}
+
+
+
+function loadMapUY(){
+  var map = L.map('mapUY').setView([-32.522779, -55.765835], 13);
+
+      //declare map
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+    
+        L.marker([-32.522779, -55.765835]).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
 
 }
