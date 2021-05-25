@@ -5,7 +5,7 @@ function getArticles(){
    req.onreadystatechange=function(){ 
      if (req.readyState === 4 && req.status === 200){ // readyState === 4 significa que está completo y el status === 200 significa que está OK
      jsonparsed = JSON.parse(req.responseText); //Paso 2: Conviertes el JSON en un objeto através de JSON.parse. No te olvides de declarar previamente la variable jsonparsed. 
-
+    //se manda a imprimir las tarjetas
      printCard();
 
      } else if (req.readyState === 4 && req.status === 404){
@@ -18,9 +18,6 @@ function getArticles(){
    }
 
    function printCard(){
-
-   // getArticles();
-
     for(let i = 0; i < jsonparsed.length; i++) {
 
 
@@ -66,7 +63,7 @@ function getArticles(){
         divcard.appendChild(divcardbody);
         divcard.appendChild(dbutton);
         document.getElementById('myDiv').appendChild(divcard);
-        console.log(jsonparsed[i]);  
+       // console.log(jsonparsed[i]);  
     }
 }
 
