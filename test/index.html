@@ -1,67 +1,151 @@
-<html>
-   <head>
-      <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
-		
-      <script type = "application/javascript">
-         function loadJSON(){
-            var data_file = "https://lefinir-antonio.github.io/test/articles.json";
-            var http_request = new XMLHttpRequest();
-            try{
-               // Opera 8.0+, Firefox, Chrome, Safari
-               http_request = new XMLHttpRequest();
-            }catch (e){
-               // Internet Explorer Browsers
-               try{
-                  http_request = new ActiveXObject("Msxml2.XMLHTTP");
-					
-               }catch (e) {
-				
-                  try{
-                     http_request = new ActiveXObject("Microsoft.XMLHTTP");
-                  }catch (e){
-                     // Something went wrong
-                     alert("Your browser broke!");
-                     return false;
-                  }
-					
-               }
-            }
-			
-            http_request.onreadystatechange = function(){
-			
-               if (http_request.readyState == 4  ){
-                  // Javascript function JSON.parse to parse JSON data
-                  var jsonObj = JSON.parse(http_request.responseText);
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                  // jsonObj variable now contains the data structure and can
-                  // be accessed as jsonObj.name and jsonObj.country.
-                  document.getElementById("Name").innerHTML = jsonObj.name;
-                  document.getElementById("Country").innerHTML = jsonObj.country;
-               }
-            }
-			
-            http_request.open("GET", data_file, true);
-            http_request.send();
-         }
-		//test json
-      </script>
-	
-      <title>tutorialspoint.com JSON</title>
-   </head>
-	
-   <body>
-      <h1>Cricketer Details</h1>
-		
-      <table class = "src">
-         <tr><th>Name</th><th>Country</th></tr>
-         <tr><td><div id = "Name">Sachin</div></td>
-         <td><div id = "Country">India</div></td></tr>
-      </table>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/styles.css">
 
-      <div class = "central">
-         <button type = "button" onclick = "loadJSON()">Update Details </button>
+    <title>Hello, world!</title>
+  </head>
+  <body onload="getArticles()">
+    <!-- navbar + jumbotron -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" id="tlogo" href="./index.html">Hoteles</a>
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./about.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./precios.html">Precios</a></li>
+            <li class="nav-item"><a class="nav-link" href="./terminos.html">Terminos y Condiciones</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+  
+      </nav>
+  
+      <div class="jumbotron text-center">
+        <h1>Hoteles</h1>
+        <p>La guia mas completa y facil de usar en toda la web</p>
+      </div> 
+
+      <!-- fin navbar + jumbotron -->
+
+      <!-- cuerpo -->
+
+      <div class="container">
+
+      <!-- Carrousel-->
+
+      <div id="carouselControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/slide1.jpg" alt="Primer slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/slide2.jpg" alt="Segundo slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/slide3.jpg" alt="Tercer slide">
+          </div>
+        </div>
+      
+        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      
       </div>
-		
-   </body>
-		
+
+      <!-- fin Carrousel-->
+
+
+      <!-- zona cards -->
+
+        <div class="d-flex flex-wrap flex-row-reverse" id="myDiv">
+
+ 
+            
+            <!-- una card 
+
+            <div class="card card-hotel d-flex flex-column justify-content-between ml-2" data-toggle="popover" data-placement="bottom" data-content="La mejor de todas">
+                <div class="card-body">
+                  <h5 class="card-title" data-toggle="tooltip" data-placement="top" title="Esta promo cuenta con garantia de satisfaccion">Super Promo 2x1 <span class="badge badge-secondary">Nuevo</span></h5>
+                  <h6 class="card-title text-muted">La mejor</h6>
+                  <img class="card-img-top" src="images/promo1.jpg" alt="Hotel Imagen">
+                  <p class="card-text">La promo consta de 2X1 en alojamientos familiares</p>
+                  <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#contacto" id="contactoBtn"></span>Consulta</button>
+                </div>
+              <div>
+                <button type="button" class="btn btn-primary btn-reserva"  data-toggle="modal" data-target="#compra" onclick="myFunction()"><span class="oi oi-plus footer-address-icon"></span>Ver mas</button>
+              </div>
+            </div>
+
+            fin una card -->
+            
+          
+        </div>
+
+      <!-- fin zona cards-->
+
+      </div>
+
+      <!-- fin cuerpo-->
+
+
+
+      <!-- footer -->
+      <footer>
+        <div class="row">
+
+        <div class="col-sm-4 d-flex flex-column">
+            <h3>Nuestras Redes</h3>
+            <p><span class="face fab fa-facebook-f"></span><a href="http://facebook.com"> Facebook</a></p>
+            <p><span class="twit fab fa-twitter"></span><a href="http://twitter.com"> Twitter</a></p>
+            <p><span class="inst fab fa-instagram"></span><a href="http://instagram.com"> Instagram</a></p>
+        </div>
+
+        <div class="col-sm-4 d-flex flex-column align-items">
+          <h3>Oficina Central</h3>
+          <address>
+            <p><span class="oi oi-home footer-address-icon"></span> <a href="./index.html"> 5011, Montevideo, Uruguay</a></p>
+            <p><span class="oi oi-phone footer-address-icon"></span> <a href="tel:+598098058354">+598 098 058 354</a></p>
+            <p><span class="oi oi-inbox footer-address-icon"></span> <a href="mailto:contacto@mysite.com">contacto@mysite.com</a></p>
+          </address>
+        </div>
+
+        <div class="col-sm-4 d-flex flex-column align-items">
+          <h3>Mapa el Sitio</h3>
+          <a href="./about.html">Nosotros</a>
+          <a href="./precios.html">Precios</a>
+          <a href="./terminos.html">Terminos y Condiciones</a>
+          <a href="./terminos.html">Contacto</a>
+        </div>
+
+      </div>
+      </footer>
+
+      <!-- fin footer-->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/final.js"></script>
+  </body>
 </html>
