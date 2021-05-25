@@ -1,19 +1,22 @@
     [  {
-        "latitude": 40.416875,
-        "longitude": -3.703308,
-        "city": "Madrid",
-        "description": "Puerta del Sol"
+        "h5": "Super Promo 50%",
+        "h6": "En todas las cadenas",
+        "img": "images/promo1.jpg",
+        "p": "Le descontamos la mitad en su proxima compra",
+	"button": "Ver Mas"
       },
       {
-        "latitude": 40.417438,
-        "longitude": -3.693363,
-        "city": "Madrid",
-        "description": "Paseo del Prado"
+        "h5": "Late Checkout",
+        "h6": "De Lunes a Sabado",
+        "img": "images/promo2.jpg",
+        "p": "Late checkout, podes dejar la habitacion mas tarde.",
+	"button": "Ver Mas"
       },
       {
-        "latitude": 40.407015,
-        "longitude": -3.691163,
-        "city": "Madrid",
-        "description": "Estación de Atocha"
+        "h5": "Super Promo 2x1",
+        "h6": "Los niños no cuentan",
+        "img": "images/promo3.jpg",
+        "p": "La promo consta de 2X1 en alojamientos familiares",
+	"button": "Ver Mas"
       }
     ]

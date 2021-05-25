@@ -15,7 +15,9 @@ function getArticles(){
 
    function myFunction(){
     getArticles();
-    console.log(jsonparsed);
+    console.log(jsonparsed[0].h5);
+    console.log(jsonparsed[0].h6);
+    console.log(jsonparsed[0].p);
     //document.getElementById('myDiv').innerHTML = 'Uruguay Weather';
 
     // create divcard
