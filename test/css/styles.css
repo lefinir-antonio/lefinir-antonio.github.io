@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+.jumbotron {
+  background-color: #fca311;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 10px; }
+
+footer {
+  padding: 10px 10px 0 10px;
+  background-color: #fca311;
+  margin-top: 10px;
+  margin-bottom: 0px; }
+
+.card-hotel {
+  flex: 1 200px;
+  margin-top: 10px;
+  margin-bottom: 0px; }
+
+.btn-reserva {
+  width: 100%;
+  border-radius: 0px; }
+
+.footer-address-icon {
+  padding-right: 10px; }
+
+/*
+.jumbotron {
+    background-image: url(../images/slide.jpg);
+    background-size: cover;
+    height: 100%;
+}
+*/
+.tab-content {
+  padding-top: 10px; }
+
+span.fab {
+  font-size: 20px;
+  padding-right: 10px; }
+
+a {
+  color: black; }
+
+#tlogo {
+  font-family: 'Russo One', sans-serif;
+  font-size: 40px;
+  color: #e5e5e5; }
