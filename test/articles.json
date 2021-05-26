@@ -18,26 +18,5 @@
         "img": "images/promo3.jpg",
         "p": "La promo consta de 2X1 en alojamientos familiares",
 	"button": "Ver Mas"
-      },
-      {
-        "h5": "Semana de turismo",
-        "h6": "Jueves, Viernes y Sabado",
-        "img": "images/promo4.jpg",
-        "p": "La promo consta de jornada extendida y late checkout",
-	"button": "Ver Mas"
-      },
-      {
-        "h5": "Promo dia del Padre",
-        "h6": "Super Relajante para papa",
-        "img": "images/promo5.jpg",
-        "p": "Incluye Gym y Spa todos los dias",
-	"button": "Ver Mas"
-      },
-      {
-        "h5": "Reserva anticipada",
-        "h6": "Lo mas economico",
-        "img": "images/promo6.jpg",
-        "p": "Lo vas pagando de a poco y ni se siente",
-	"button": "Ver Mas"
       }
     ]
