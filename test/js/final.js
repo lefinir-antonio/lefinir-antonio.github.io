@@ -1,7 +1,7 @@
 var jsonparsed;
 
 function getArticles(){
-    req=new XMLHttpRequest();
+   req=new XMLHttpRequest();
    req.onreadystatechange=function(){ 
      if (req.readyState === 4 && req.status === 200){ // readyState === 4 significa que está completo y el status === 200 significa que está OK
      jsonparsed = JSON.parse(req.responseText); //Paso 2: Conviertes el JSON en un objeto através de JSON.parse. No te olvides de declarar previamente la variable jsonparsed. 
@@ -13,7 +13,9 @@ function getArticles(){
      }
    
    };
-   req.open("GET",'https://lefinir-antonio.github.io/test/articles.json',true);
+   //req.open("GET",'https://lefinir-antonio.github.io/test/articles.json',true);
+   req.open("GET",'https://sheet.best/api/sheets/73241120-2212-4d58-a4bc-4fc19daf4954',true);
+   
    req.send();
    }
 
